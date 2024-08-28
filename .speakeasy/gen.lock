@@ -4,7 +4,7 @@ management:
   docChecksum: abfad91d35915133be4761a4f2953716
   docVersion: v1
   speakeasyVersion: internal
-  generationVersion: 2.404.11
+  generationVersion: 2.404.10
   releaseVersion: 0.3.0-beta.2
   configChecksum: 80434d26185e1d667e08dee8aa5c755a
   repoURL: https://github.com/clerk/clerk-sdk-java.git
