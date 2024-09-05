@@ -13,7 +13,7 @@ features:
   java:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.1
-    core: 3.29.4
+    core: 3.29.5
     deprecations: 2.81.1
     examples: 2.81.3
     flattening: 2.81.1
@@ -1131,3 +1131,524 @@ generatedFiles:
   - docs/sdks/testingtokens/README.md
   - USAGE.md
   - CONTRIBUTING.md
+examples:
+  GetPublicInterstitial:
+    speakeasy-default-get-public-interstitial: {}
+  GetJWKS:
+    speakeasy-default-get-JWKS: {}
+  GetClientList:
+    speakeasy-default-get-client-list: {}
+  VerifyClient:
+    speakeasy-default-verify-client: {}
+  GetClient:
+    speakeasy-default-get-client:
+      parameters:
+        path:
+          client_id: "<value>"
+  CreateEmailAddress:
+    speakeasy-default-create-email-address: {}
+  GetEmailAddress:
+    speakeasy-default-get-email-address:
+      parameters:
+        path:
+          email_address_id: "<value>"
+  DeleteEmailAddress:
+    speakeasy-default-delete-email-address:
+      parameters:
+        path:
+          email_address_id: "<value>"
+  UpdateEmailAddress:
+    speakeasy-default-update-email-address:
+      parameters:
+        path:
+          email_address_id: "<value>"
+  CreatePhoneNumber:
+    speakeasy-default-create-phone-number: {}
+  GetPhoneNumber:
+    speakeasy-default-get-phone-number:
+      parameters:
+        path:
+          phone_number_id: "<value>"
+  DeletePhoneNumber:
+    speakeasy-default-delete-phone-number:
+      parameters:
+        path:
+          phone_number_id: "<value>"
+  UpdatePhoneNumber:
+    speakeasy-default-update-phone-number:
+      parameters:
+        path:
+          phone_number_id: "<value>"
+  GetSessionList:
+    speakeasy-default-get-session-list: {}
+  GetSession:
+    speakeasy-default-get-session:
+      parameters:
+        path:
+          session_id: "<value>"
+  RevokeSession:
+    speakeasy-default-revoke-session:
+      parameters:
+        path:
+          session_id: "<value>"
+  VerifySession:
+    speakeasy-default-verify-session:
+      parameters:
+        path:
+          session_id: "<value>"
+  CreateSessionTokenFromTemplate:
+    speakeasy-default-create-session-token-from-template:
+      parameters:
+        path:
+          session_id: "<value>"
+          template_name: "<value>"
+  GetTemplateList:
+    speakeasy-default-get-template-list:
+      parameters:
+        path:
+          template_type: "sms"
+  GetTemplate:
+    speakeasy-default-get-template:
+      parameters:
+        path:
+          template_type: "sms"
+          slug: "<value>"
+  UpsertTemplate:
+    speakeasy-default-upsert-template:
+      parameters:
+        path:
+          template_type: "sms"
+          slug: "<value>"
+  RevertTemplate:
+    speakeasy-default-revert-template:
+      parameters:
+        path:
+          template_type: "email"
+          slug: "<value>"
+  PreviewTemplate:
+    speakeasy-default-preview-template:
+      parameters:
+        path:
+          template_type: "<value>"
+          slug: "<value>"
+  ToggleTemplateDelivery:
+    speakeasy-default-toggle-template-delivery:
+      parameters:
+        path:
+          template_type: "email"
+          slug: "<value>"
+  GetUserList:
+    "":
+      parameters:
+        query:
+          last_active_at_since: 1700690400000
+      responses:
+        "200":
+          application/json: []
+        "400": {}
+  CreateUser:
+    speakeasy-default-create-user:
+      responses:
+        "200":
+          application/json: {"last_active_at": 1700690400000}
+        "400": {}
+  GetUsersCount:
+    speakeasy-default-get-users-count: {}
+  GetUser:
+    speakeasy-default-get-user:
+      parameters:
+        path:
+          user_id: "<value>"
+      responses:
+        "200":
+          application/json: {"last_active_at": 1700690400000}
+        "400": {}
+  UpdateUser:
+    speakeasy-default-update-user:
+      parameters:
+        path:
+          user_id: "<value>"
+      responses:
+        "200":
+          application/json: {"last_active_at": 1700690400000}
+        "400": {}
+  DeleteUser:
+    speakeasy-default-delete-user:
+      parameters:
+        path:
+          user_id: "<value>"
+  BanUser:
+    speakeasy-default-ban-user:
+      parameters:
+        path:
+          user_id: "<value>"
+      responses:
+        "200":
+          application/json: {"last_active_at": 1700690400000}
+        "402": {}
+  UnbanUser:
+    speakeasy-default-unban-user:
+      parameters:
+        path:
+          user_id: "<value>"
+      responses:
+        "200":
+          application/json: {"last_active_at": 1700690400000}
+        "402": {}
+  LockUser:
+    speakeasy-default-lock-user:
+      parameters:
+        path:
+          user_id: "<value>"
+      responses:
+        "200":
+          application/json: {"last_active_at": 1700690400000}
+        "403": {}
+  UnlockUser:
+    speakeasy-default-unlock-user:
+      parameters:
+        path:
+          user_id: "<value>"
+      responses:
+        "200":
+          application/json: {"last_active_at": 1700690400000}
+        "403": {}
+  SetUserProfileImage:
+    speakeasy-default-set-user-profile-image:
+      parameters:
+        path:
+          user_id: "<value>"
+      responses:
+        "200":
+          application/json: {"last_active_at": 1700690400000}
+        "400": {}
+  DeleteUserProfileImage:
+    speakeasy-default-delete-user-profile-image:
+      parameters:
+        path:
+          user_id: "<value>"
+      responses:
+        "200":
+          application/json: {"last_active_at": 1700690400000}
+        "404": {}
+  UpdateUserMetadata:
+    speakeasy-default-update-user-metadata:
+      parameters:
+        path:
+          user_id: "<value>"
+      responses:
+        "200":
+          application/json: {"last_active_at": 1700690400000}
+        "400": {}
+  GetOAuthAccessToken:
+    speakeasy-default-get-O-auth-access-token:
+      parameters:
+        path:
+          user_id: "<value>"
+          provider: "<value>"
+  UsersGetOrganizationMemberships:
+    speakeasy-default-users-get-organization-memberships:
+      parameters:
+        path:
+          user_id: "<value>"
+        query: {}
+  VerifyPassword:
+    speakeasy-default-verify-password:
+      parameters:
+        path:
+          user_id: "<value>"
+  VerifyTOTP:
+    speakeasy-default-verify-TOTP:
+      parameters:
+        path:
+          user_id: "<value>"
+  DisableMFA:
+    speakeasy-default-disable-MFA:
+      parameters:
+        path:
+          user_id: "<value>"
+  CreateInvitation:
+    speakeasy-default-create-invitation:
+      responses:
+        "200":
+          application/json: {"object": "invitation", "id": "<id>", "email_address": "Jena.Nienow28@yahoo.com", "revoked": false, "status": "pending", "created_at": 134365, "updated_at": 786546}
+        "400": {}
+  ListInvitations:
+    speakeasy-default-list-invitations:
+      responses:
+        "200":
+          application/json: []
+  RevokeInvitation:
+    speakeasy-default-revoke-invitation:
+      parameters:
+        path:
+          invitation_id: "<value>"
+      responses:
+        "200":
+          application/json: {"object": "invitation", "id": "<id>", "email_address": "Myrl12@hotmail.com", "revoked": true, "status": "revoked", "created_at": 423006, "updated_at": 182898}
+        "400": {}
+  ListAllowlistIdentifiers:
+    speakeasy-default-list-allowlist-identifiers: {}
+  CreateAllowlistIdentifier:
+    speakeasy-default-create-allowlist-identifier: {}
+  DeleteAllowlistIdentifier:
+    speakeasy-default-delete-allowlist-identifier:
+      parameters:
+        path:
+          identifier_id: "<value>"
+  ListBlocklistIdentifiers:
+    speakeasy-default-list-blocklist-identifiers: {}
+  CreateBlocklistIdentifier:
+    speakeasy-default-create-blocklist-identifier: {}
+  DeleteBlocklistIdentifier:
+    speakeasy-default-delete-blocklist-identifier:
+      parameters:
+        path:
+          identifier_id: "<value>"
+  UpdateInstanceAuthConfig:
+    speakeasy-default-update-instance-auth-config: {}
+  UpdateProductionInstanceDomain:
+    speakeasy-default-update-production-instance-domain: {}
+  UpdateInstance:
+    speakeasy-default-update-instance: {}
+  UpdateInstanceRestrictions:
+    speakeasy-default-update-instance-restrictions: {}
+  ChangeProductionInstanceDomain:
+    speakeasy-default-change-production-instance-domain: {}
+  UpdateInstanceOrganizationSettings:
+    speakeasy-default-update-instance-organization-settings: {}
+  CreateActorToken:
+    speakeasy-default-create-actor-token:
+      requestBody:
+        application/json: {"user_id": "<value>", "actor": {"sub": "user_2OEpKhcCN1Lat9NQ0G6puh7q5Rb"}}
+  RevokeActorToken:
+    speakeasy-default-revoke-actor-token:
+      parameters:
+        path:
+          actor_token_id: "<value>"
+  ListDomains:
+    speakeasy-default-list-domains: {}
+  AddDomain:
+    speakeasy-default-add-domain: {}
+  DeleteDomain:
+    speakeasy-default-delete-domain:
+      parameters:
+        path:
+          domain_id: "<value>"
+  UpdateDomain:
+    speakeasy-default-update-domain:
+      parameters:
+        path:
+          domain_id: "<value>"
+  CreateSvixApp:
+    speakeasy-default-create-svix-app: {}
+  DeleteSvixApp:
+    speakeasy-default-delete-svix-app: {}
+  GenerateSvixAuthURL:
+    speakeasy-default-generate-svix-auth-URL: {}
+  ListJWTTemplates:
+    speakeasy-default-list-JWT-templates: {}
+  CreateJWTTemplate:
+    speakeasy-default-create-JWT-template: {}
+  GetJWTTemplate:
+    speakeasy-default-get-JWT-template:
+      parameters:
+        path:
+          template_id: "<value>"
+  UpdateJWTTemplate:
+    speakeasy-default-update-JWT-template:
+      parameters:
+        path:
+          template_id: "<value>"
+  DeleteJWTTemplate:
+    speakeasy-default-delete-JWT-template:
+      parameters:
+        path:
+          template_id: "<value>"
+  ListOrganizations:
+    speakeasy-default-list-organizations: {}
+  CreateOrganization:
+    speakeasy-default-create-organization: {}
+  GetOrganization:
+    speakeasy-default-get-organization:
+      parameters:
+        path:
+          organization_id: "<value>"
+  UpdateOrganization:
+    speakeasy-default-update-organization:
+      parameters:
+        path:
+          organization_id: "<value>"
+  DeleteOrganization:
+    speakeasy-default-delete-organization:
+      parameters:
+        path:
+          organization_id: "<value>"
+  MergeOrganizationMetadata:
+    speakeasy-default-merge-organization-metadata:
+      parameters:
+        path:
+          organization_id: "<value>"
+  UploadOrganizationLogo:
+    speakeasy-default-upload-organization-logo:
+      parameters:
+        path:
+          organization_id: "<value>"
+  DeleteOrganizationLogo:
+    speakeasy-default-delete-organization-logo:
+      parameters:
+        path:
+          organization_id: "<value>"
+  CreateOrganizationInvitation:
+    speakeasy-default-create-organization-invitation:
+      parameters:
+        path:
+          organization_id: "<value>"
+      requestBody:
+        application/json: {"email_address": "Jena.Nienow28@yahoo.com", "inviter_user_id": "<value>", "role": "<value>"}
+  ListOrganizationInvitations:
+    speakeasy-default-list-organization-invitations:
+      parameters:
+        path:
+          organization_id: "<value>"
+        query: {}
+  CreateOrganizationInvitationBulk:
+    speakeasy-default-create-organization-invitation-bulk:
+      parameters:
+        path:
+          organization_id: "<value>"
+      requestBody:
+        application/json: []
+  ListPendingOrganizationInvitations:
+    speakeasy-default-list-pending-organization-invitations:
+      parameters:
+        path:
+          organization_id: "<value>"
+        query: {}
+  GetOrganizationInvitation:
+    speakeasy-default-get-organization-invitation:
+      parameters:
+        path:
+          organization_id: "<value>"
+          invitation_id: "<value>"
+  RevokeOrganizationInvitation:
+    speakeasy-default-revoke-organization-invitation:
+      parameters:
+        path:
+          organization_id: "<value>"
+          invitation_id: "<value>"
+      requestBody:
+        application/json: {"requesting_user_id": "<value>"}
+  CreateOrganizationMembership:
+    speakeasy-default-create-organization-membership:
+      parameters:
+        path:
+          organization_id: "<value>"
+      requestBody:
+        application/json: {"user_id": "<value>", "role": "<value>"}
+  ListOrganizationMemberships:
+    speakeasy-default-list-organization-memberships:
+      parameters:
+        path:
+          organization_id: "<value>"
+        query: {}
+  UpdateOrganizationMembership:
+    speakeasy-default-update-organization-membership:
+      parameters:
+        path:
+          organization_id: "<value>"
+          user_id: "<value>"
+      requestBody:
+        application/json: {"role": "<value>"}
+  DeleteOrganizationMembership:
+    speakeasy-default-delete-organization-membership:
+      parameters:
+        path:
+          organization_id: "<value>"
+          user_id: "<value>"
+  UpdateOrganizationMembershipMetadata:
+    speakeasy-default-update-organization-membership-metadata:
+      parameters:
+        path:
+          organization_id: "<value>"
+          user_id: "<value>"
+  VerifyDomainProxy:
+    speakeasy-default-verify-domain-proxy: {}
+  ListRedirectURLs:
+    speakeasy-default-list-redirect-UR-ls: {}
+  CreateRedirectURL:
+    speakeasy-default-create-redirect-URL: {}
+  GetRedirectURL:
+    speakeasy-default-get-redirect-URL:
+      parameters:
+        path:
+          id: "<id>"
+  DeleteRedirectURL:
+    speakeasy-default-delete-redirect-URL:
+      parameters:
+        path:
+          id: "<id>"
+  CreateSignInToken:
+    speakeasy-default-create-sign-in-token: {}
+  RevokeSignInToken:
+    speakeasy-default-revoke-sign-in-token:
+      parameters:
+        path:
+          sign_in_token_id: "<value>"
+  UpdateSignUp:
+    speakeasy-default-update-sign-up:
+      parameters:
+        path:
+          id: "<id>"
+  ListOAuthApplications:
+    speakeasy-default-list-O-auth-applications: {}
+  CreateOAuthApplication:
+    speakeasy-default-create-O-auth-application:
+      requestBody:
+        application/json: {"name": "<value>", "callback_url": "<value>", "scopes": "profile email public_metadata"}
+  GetOAuthApplication:
+    speakeasy-default-get-O-auth-application:
+      parameters:
+        path:
+          oauth_application_id: "<value>"
+  UpdateOAuthApplication:
+    speakeasy-default-update-O-auth-application:
+      parameters:
+        path:
+          oauth_application_id: "<value>"
+      requestBody:
+        application/json: {"scopes": "profile email public_metadata private_metadata"}
+  DeleteOAuthApplication:
+    speakeasy-default-delete-O-auth-application:
+      parameters:
+        path:
+          oauth_application_id: "<value>"
+  RotateOAuthApplicationSecret:
+    speakeasy-default-rotate-O-auth-application-secret:
+      parameters:
+        path:
+          oauth_application_id: "<value>"
+  ListSAMLConnections:
+    speakeasy-default-list-SAML-connections: {}
+  CreateSAMLConnection:
+    speakeasy-default-create-SAML-connection: {}
+  GetSAMLConnection:
+    speakeasy-default-get-SAML-connection:
+      parameters:
+        path:
+          saml_connection_id: "<value>"
+  UpdateSAMLConnection:
+    speakeasy-default-update-SAML-connection:
+      parameters:
+        path:
+          saml_connection_id: "<value>"
+  DeleteSAMLConnection:
+    speakeasy-default-delete-SAML-connection:
+      parameters:
+        path:
+          saml_connection_id: "<value>"
+  CreateTestingToken:
+    speakeasy-default-create-testing-token:
+      responses:
+        "200":
+          application/json: {"object": "testing_token", "token": "1713877200-c_2J2MvPu9PnXcuhbPZNao0LOXqK9A7YrnBn0HmIWxy", "expires_at": 1713880800}
