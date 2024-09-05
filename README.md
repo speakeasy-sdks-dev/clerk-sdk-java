@@ -8,6 +8,35 @@
 
 The Clerk Java library provides convenient access to the Clerk REST API from from a Java application. The library includes type definitions for all request params and response fields, and is powered by [Apache Httpclient](https://hc.apache.org/httpcomponents-client-4.5.x/index.html).
 
+<!-- Start Summary [summary] -->
+## Summary
+
+Clerk Backend API: The Clerk REST Backend API, meant to be accessed by backend
+servers.
+
+### Versions
+
+When the API changes in a way that isn't compatible with older versions, a new version is released.
+Each version is identified by its release date, e.g. `2021-02-05`. For more information, please see [Clerk API Versions](https://clerk.com/docs/backend-requests/versioning/overview).
+
+
+Please see https://clerk.com/docs for more information.
+
+More information about the API can be found at https://clerk.com/docs
+<!-- End Summary [summary] -->
+
+<!-- Start Table of Contents [toc] -->
+## Table of Contents
+
+* [SDK Installation](#sdk-installation)
+* [SDK Example Usage](#sdk-example-usage)
+* [Available Resources and Operations](#available-resources-and-operations)
+* [Pagination](#pagination)
+* [Error Handling](#error-handling)
+* [Server Selection](#server-selection)
+* [Authentication](#authentication)
+<!-- End Table of Contents [toc] -->
+
 <!-- Start SDK Installation [installation] -->
 ## SDK Installation
 
