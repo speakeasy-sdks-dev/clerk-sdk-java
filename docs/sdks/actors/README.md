@@ -36,7 +36,7 @@ public class Application {
             CreateActorTokenRequestBody req = CreateActorTokenRequestBody.builder()
                 .userId("<value>")
                 .actor(Map.ofEntries(
-                        Map.entry("sub", "user_2OEpKhcCN1Lat9NQ0G6puh7q5Rb")))
+                    Map.entry("sub", "user_2OEpKhcCN1Lat9NQ0G6puh7q5Rb")))
                 .build();
 
             CreateActorTokenResponse res = sdk.actors().createToken()

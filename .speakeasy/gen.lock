@@ -13,7 +13,7 @@ features:
   java:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.1
-    core: 3.29.5
+    core: 3.29.7
     deprecations: 2.81.1
     examples: 2.81.3
     flattening: 2.81.1
@@ -1280,6 +1280,7 @@ examples:
       responses:
         "401":
           application/json: {"errors": []}
+        "200": {}
   GetTemplateList:
     speakeasy-default-get-template-list:
       parameters:
@@ -1299,6 +1300,7 @@ examples:
       responses:
         "400":
           application/json: {"errors": []}
+        "200": {}
   UpsertTemplate:
     speakeasy-default-upsert-template:
       parameters:
@@ -1308,6 +1310,7 @@ examples:
       responses:
         "400":
           application/json: {"errors": []}
+        "200": {}
   RevertTemplate:
     speakeasy-default-revert-template:
       parameters:
@@ -1317,6 +1320,7 @@ examples:
       responses:
         "400":
           application/json: {"errors": []}
+        "200": {}
   PreviewTemplate:
     speakeasy-default-preview-template:
       parameters:
@@ -1326,6 +1330,7 @@ examples:
       responses:
         "400":
           application/json: {"errors": []}
+        "200": {}
   ToggleTemplateDelivery:
     speakeasy-default-toggle-template-delivery:
       parameters:
@@ -1335,6 +1340,7 @@ examples:
       responses:
         "400":
           application/json: {"errors": []}
+        "200": {}
   GetUserList:
     "":
       parameters:
@@ -1489,6 +1495,7 @@ examples:
       responses:
         "500":
           application/json: {"errors": []}
+        "200": {}
   VerifyTOTP:
     speakeasy-default-verify-TOTP:
       parameters:
@@ -1497,6 +1504,7 @@ examples:
       responses:
         "500":
           application/json: {"errors": []}
+        "200": {}
   DisableMFA:
     speakeasy-default-disable-MFA:
       parameters:
@@ -1505,6 +1513,7 @@ examples:
       responses:
         "404":
           application/json: {"errors": []}
+        "200": {}
   CreateInvitation:
     speakeasy-default-create-invitation:
       responses:
@@ -1539,6 +1548,7 @@ examples:
       responses:
         "400":
           application/json: {"errors": []}
+        "200": {}
   DeleteAllowlistIdentifier:
     speakeasy-default-delete-allowlist-identifier:
       parameters:
@@ -1561,6 +1571,7 @@ examples:
       responses:
         "400":
           application/json: {"errors": []}
+        "200": {}
   DeleteBlocklistIdentifier:
     speakeasy-default-delete-blocklist-identifier:
       parameters:
@@ -1576,6 +1587,7 @@ examples:
       responses:
         "402":
           application/json: {"errors": []}
+        "200": {}
   UpdateProductionInstanceDomain:
     speakeasy-default-update-production-instance-domain:
       responses:
@@ -1591,6 +1603,7 @@ examples:
       responses:
         "402":
           application/json: {"errors": []}
+        "200": {}
   ChangeProductionInstanceDomain:
     speakeasy-default-change-production-instance-domain:
       responses:
@@ -1799,6 +1812,7 @@ examples:
       responses:
         "400":
           application/json: {"errors": []}
+        "200": {}
   ListOrganizationInvitations:
     speakeasy-default-list-organization-invitations:
       parameters:
@@ -1842,6 +1856,7 @@ examples:
       responses:
         "400":
           application/json: {"errors": []}
+        "200": {}
   RevokeOrganizationInvitation:
     speakeasy-default-revoke-organization-invitation:
       parameters:
@@ -1853,6 +1868,7 @@ examples:
       responses:
         "400":
           application/json: {"errors": []}
+        "200": {}
   CreateOrganizationMembership:
     speakeasy-default-create-organization-membership:
       parameters:
@@ -1863,6 +1879,7 @@ examples:
       responses:
         "400":
           application/json: {"errors": []}
+        "200": {}
   ListOrganizationMemberships:
     speakeasy-default-list-organization-memberships:
       parameters:
@@ -1885,6 +1902,7 @@ examples:
       responses:
         "400":
           application/json: {"errors": []}
+        "200": {}
   DeleteOrganizationMembership:
     speakeasy-default-delete-organization-membership:
       parameters:
@@ -1894,6 +1912,7 @@ examples:
       responses:
         "400":
           application/json: {"errors": []}
+        "200": {}
   UpdateOrganizationMembershipMetadata:
     speakeasy-default-update-organization-membership-metadata:
       parameters:
@@ -1903,6 +1922,7 @@ examples:
       responses:
         "400":
           application/json: {"errors": []}
+        "200": {}
   VerifyDomainProxy:
     speakeasy-default-verify-domain-proxy:
       responses:

@@ -1034,7 +1034,7 @@ public class Application {
             VerifyPasswordResponse res = sdk.users().verifyPassword()
                 .userId("<value>")
                 .requestBody(VerifyPasswordRequestBody.builder()
-                    .password("<value>")
+                    .password("17fSwgrbLljZqm7")
                     .build())
                 .call();
 
