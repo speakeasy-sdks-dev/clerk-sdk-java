@@ -452,9 +452,9 @@ public class Application {
                 .requestBody(UploadOrganizationLogoRequestBody.builder()
                     .uploaderUserId("<value>")
                     .file(UploadOrganizationLogoFile.builder()
-                            .fileName("<value>")
-                            .content("0x07D3D6E1EC".getBytes())
-                            .build())
+                        .fileName("example.file")
+                        .content("0x07D3D6E1EC".getBytes())
+                        .build())
                     .build())
                 .call();
 
