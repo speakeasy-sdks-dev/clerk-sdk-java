@@ -98,8 +98,8 @@ public class Application {
 
             CreateSAMLConnectionRequestBody req = CreateSAMLConnectionRequestBody.builder()
                 .name("<value>")
-                .domain("<value>")
-                .provider(Provider.SAML_OKTA)
+                .domain("lighthearted-kilogram.name")
+                .provider(Provider.SAML_MICROSOFT)
                 .build();
 
             CreateSAMLConnectionResponse res = sdk.samlConnections().create()

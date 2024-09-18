@@ -35,7 +35,7 @@ public class Application {
                 .build();
 
             CreateInvitationRequestBody req = CreateInvitationRequestBody.builder()
-                .emailAddress("<value>")
+                .emailAddress("Jena.Nienow28@yahoo.com")
                 .build();
 
             CreateInvitationResponse res = sdk.invitations().create()
