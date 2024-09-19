@@ -17,13 +17,13 @@ public class RevertTemplateRequestBuilder {
         this.sdk = sdk;
     }
 
-    public RevertTemplateRequestBuilder templateType(com.clerk.backend_api.models.operations.RevertTemplatePathParamTemplateType templateType) {
+    public RevertTemplateRequestBuilder templateType(RevertTemplatePathParamTemplateType templateType) {
         Utils.checkNotNull(templateType, "templateType");
         this.templateType = templateType;
         return this;
     }
 
-    public RevertTemplateRequestBuilder slug(java.lang.String slug) {
+    public RevertTemplateRequestBuilder slug(String slug) {
         Utils.checkNotNull(slug, "slug");
         this.slug = slug;
         return this;

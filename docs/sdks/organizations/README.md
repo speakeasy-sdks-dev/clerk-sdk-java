@@ -27,40 +27,29 @@ Most recent organizations will be returned first.
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors;
 import com.clerk.backend_api.models.operations.ListOrganizationsRequest;
 import com.clerk.backend_api.models.operations.ListOrganizationsResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
+    public static void main(String[] args) throws ClerkErrors, Exception {
+
+        Clerk sdk = Clerk.builder()
                 .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        ListOrganizationsRequest req = ListOrganizationsRequest.builder()
                 .build();
 
-            ListOrganizationsRequest req = ListOrganizationsRequest.builder()
-                .build();
-
-            ListOrganizationsResponse res = sdk.organizations().list()
+        ListOrganizationsResponse res = sdk.organizations().list()
                 .request(req)
                 .call();
 
-            if (res.organizations().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.organizations().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -101,42 +90,31 @@ Public metadata can be accessed from the Backend API, and are read-only from the
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors;
 import com.clerk.backend_api.models.operations.CreateOrganizationRequestBody;
 import com.clerk.backend_api.models.operations.CreateOrganizationResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors, Exception {
 
-            CreateOrganizationRequestBody req = CreateOrganizationRequestBody.builder()
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        CreateOrganizationRequestBody req = CreateOrganizationRequestBody.builder()
                 .name("<value>")
                 .createdBy("<value>")
                 .build();
 
-            CreateOrganizationResponse res = sdk.organizations().create()
+        CreateOrganizationResponse res = sdk.organizations().create()
                 .request(req)
                 .call();
 
-            if (res.organization().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.organization().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -169,36 +147,25 @@ Fetches the organization whose ID or slug matches the provided `id_or_slug` URL 
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors;
 import com.clerk.backend_api.models.operations.GetOrganizationResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors, Exception {
 
-            GetOrganizationResponse res = sdk.organizations().get()
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        GetOrganizationResponse res = sdk.organizations().get()
                 .organizationId("<value>")
                 .call();
 
-            if (res.organization().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.organization().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -231,39 +198,28 @@ Updates an existing organization
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors;
 import com.clerk.backend_api.models.operations.UpdateOrganizationRequestBody;
 import com.clerk.backend_api.models.operations.UpdateOrganizationResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors, Exception {
 
-            UpdateOrganizationResponse res = sdk.organizations().update()
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        UpdateOrganizationResponse res = sdk.organizations().update()
                 .organizationId("<value>")
                 .requestBody(UpdateOrganizationRequestBody.builder()
                     .build())
                 .call();
 
-            if (res.organization().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.organization().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -299,36 +255,25 @@ This is not reversible.
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors;
 import com.clerk.backend_api.models.operations.DeleteOrganizationResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors, Exception {
 
-            DeleteOrganizationResponse res = sdk.organizations().delete()
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        DeleteOrganizationResponse res = sdk.organizations().delete()
                 .organizationId("<value>")
                 .call();
 
-            if (res.deletedObject().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.deletedObject().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -364,39 +309,28 @@ You can remove metadata keys at any level by setting their value to `null`.
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors;
 import com.clerk.backend_api.models.operations.MergeOrganizationMetadataRequestBody;
 import com.clerk.backend_api.models.operations.MergeOrganizationMetadataResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors, Exception {
 
-            MergeOrganizationMetadataResponse res = sdk.organizations().mergeMetadata()
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        MergeOrganizationMetadataResponse res = sdk.organizations().mergeMetadata()
                 .organizationId("<value>")
                 .requestBody(MergeOrganizationMetadataRequestBody.builder()
                     .build())
                 .call();
 
-            if (res.organization().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.organization().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -433,45 +367,35 @@ Only the following file content types are supported: `image/jpeg`, `image/png`, 
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors;
 import com.clerk.backend_api.models.operations.UploadOrganizationLogoFile;
 import com.clerk.backend_api.models.operations.UploadOrganizationLogoRequestBody;
 import com.clerk.backend_api.models.operations.UploadOrganizationLogoResponse;
 import java.lang.Exception;
+import java.nio.charset.StandardCharsets;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors, Exception {
 
-            UploadOrganizationLogoResponse res = sdk.organizations().uploadLogo()
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        UploadOrganizationLogoResponse res = sdk.organizations().uploadLogo()
                 .organizationId("<value>")
                 .requestBody(UploadOrganizationLogoRequestBody.builder()
                     .uploaderUserId("<value>")
                     .file(UploadOrganizationLogoFile.builder()
-                            .fileName("<value>")
-                            .content("0x07D3D6E1EC".getBytes())
-                            .build())
+                        .fileName("example.file")
+                        .content("0x07D3D6E1EC".getBytes(StandardCharsets.UTF_8))
+                        .build())
                     .build())
                 .call();
 
-            if (res.organizationWithLogo().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.organizationWithLogo().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -505,36 +429,25 @@ Delete the organization's logo.
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors;
 import com.clerk.backend_api.models.operations.DeleteOrganizationLogoResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors, Exception {
 
-            DeleteOrganizationLogoResponse res = sdk.organizations().deleteLogo()
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        DeleteOrganizationLogoResponse res = sdk.organizations().deleteLogo()
                 .organizationId("<value>")
                 .call();
 
-            if (res.organization().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.organization().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```

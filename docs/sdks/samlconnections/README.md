@@ -23,31 +23,24 @@ The SAML Connections are ordered by descending creation date and the most recent
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
+import com.clerk.backend_api.models.errors.ClerkErrors;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors, Exception {
 
-            sdk.samlConnections().list()
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        sdk.samlConnections().list()
                 .limit(10L)
                 .offset(0L)
                 .callAsStreamUnwrapped()
-                .forEach(item -> {
-                   // handle item
-                });
-
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
-        }
+            .forEach(item -> {
+               // handle item
+            });
 
     }
 }
@@ -82,7 +75,7 @@ Create a new SAML Connection.
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors;
 import com.clerk.backend_api.models.operations.CreateSAMLConnectionRequestBody;
 import com.clerk.backend_api.models.operations.CreateSAMLConnectionResponse;
 import com.clerk.backend_api.models.operations.Provider;
@@ -90,36 +83,25 @@ import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
+    public static void main(String[] args) throws ClerkErrors, Exception {
+
+        Clerk sdk = Clerk.builder()
                 .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+            .build();
 
-            CreateSAMLConnectionRequestBody req = CreateSAMLConnectionRequestBody.builder()
+        CreateSAMLConnectionRequestBody req = CreateSAMLConnectionRequestBody.builder()
                 .name("<value>")
-                .domain("<value>")
-                .provider(Provider.SAML_OKTA)
+                .domain("lighthearted-kilogram.name")
+                .provider(Provider.SAML_MICROSOFT)
                 .build();
 
-            CreateSAMLConnectionResponse res = sdk.samlConnections().create()
+        CreateSAMLConnectionResponse res = sdk.samlConnections().create()
                 .request(req)
                 .call();
 
-            if (res.samlConnection().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.samlConnection().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -152,36 +134,25 @@ Fetches the SAML Connection whose ID matches the provided `saml_connection_id` i
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors;
 import com.clerk.backend_api.models.operations.GetSAMLConnectionResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors, Exception {
 
-            GetSAMLConnectionResponse res = sdk.samlConnections().get()
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        GetSAMLConnectionResponse res = sdk.samlConnections().get()
                 .samlConnectionId("<value>")
                 .call();
 
-            if (res.samlConnection().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.samlConnection().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -214,39 +185,28 @@ Updates the SAML Connection whose ID matches the provided `id` in the path.
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors;
 import com.clerk.backend_api.models.operations.UpdateSAMLConnectionRequestBody;
 import com.clerk.backend_api.models.operations.UpdateSAMLConnectionResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors, Exception {
 
-            UpdateSAMLConnectionResponse res = sdk.samlConnections().update()
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        UpdateSAMLConnectionResponse res = sdk.samlConnections().update()
                 .samlConnectionId("<value>")
                 .requestBody(UpdateSAMLConnectionRequestBody.builder()
                     .build())
                 .call();
 
-            if (res.samlConnection().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.samlConnection().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -280,36 +240,25 @@ Deletes the SAML Connection whose ID matches the provided `id` in the path.
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors;
 import com.clerk.backend_api.models.operations.DeleteSAMLConnectionResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors, Exception {
 
-            DeleteSAMLConnectionResponse res = sdk.samlConnections().delete()
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        DeleteSAMLConnectionResponse res = sdk.samlConnections().delete()
                 .samlConnectionId("<value>")
                 .call();
 
-            if (res.deletedObject().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.deletedObject().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
