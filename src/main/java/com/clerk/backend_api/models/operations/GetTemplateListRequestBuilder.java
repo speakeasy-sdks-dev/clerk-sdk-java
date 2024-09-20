@@ -15,7 +15,7 @@ public class GetTemplateListRequestBuilder {
         this.sdk = sdk;
     }
 
-    public GetTemplateListRequestBuilder templateType(com.clerk.backend_api.models.operations.TemplateType templateType) {
+    public GetTemplateListRequestBuilder templateType(TemplateType templateType) {
         Utils.checkNotNull(templateType, "templateType");
         this.templateType = templateType;
         return this;

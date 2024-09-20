@@ -30,7 +30,7 @@ public class UsersGetOrganizationMembershipsRequestBuilder {
         this.sdk = sdk;
     }
 
-    public UsersGetOrganizationMembershipsRequestBuilder userId(java.lang.String userId) {
+    public UsersGetOrganizationMembershipsRequestBuilder userId(String userId) {
         Utils.checkNotNull(userId, "userId");
         this.userId = userId;
         return this;
@@ -42,7 +42,7 @@ public class UsersGetOrganizationMembershipsRequestBuilder {
         return this;
     }
 
-    public UsersGetOrganizationMembershipsRequestBuilder limit(java.util.Optional<java.lang.Long> limit) {
+    public UsersGetOrganizationMembershipsRequestBuilder limit(Optional<Long> limit) {
         Utils.checkNotNull(limit, "limit");
         this.limit = limit;
         return this;
@@ -54,7 +54,7 @@ public class UsersGetOrganizationMembershipsRequestBuilder {
         return this;
     }
 
-    public UsersGetOrganizationMembershipsRequestBuilder offset(java.util.Optional<java.lang.Long> offset) {
+    public UsersGetOrganizationMembershipsRequestBuilder offset(Optional<Long> offset) {
         Utils.checkNotNull(offset, "offset");
         this.offset = offset;
         return this;
