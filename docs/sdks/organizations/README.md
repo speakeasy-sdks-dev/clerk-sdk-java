@@ -388,7 +388,7 @@ public class Application {
                     .uploaderUserId("<value>")
                     .file(UploadOrganizationLogoFile.builder()
                         .fileName("example.file")
-                        .content("0x07D3D6E1EC".getBytes(StandardCharsets.UTF_8))
+                        .content("0x0DDEE4e6Ea".getBytes(StandardCharsets.UTF_8))
                         .build())
                     .build())
                 .call();

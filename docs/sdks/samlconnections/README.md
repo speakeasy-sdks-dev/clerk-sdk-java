@@ -91,8 +91,8 @@ public class Application {
 
         CreateSAMLConnectionRequestBody req = CreateSAMLConnectionRequestBody.builder()
                 .name("<value>")
-                .domain("lighthearted-kilogram.name")
-                .provider(Provider.SAML_MICROSOFT)
+                .domain("low-packaging.info")
+                .provider(Provider.SAML_CUSTOM)
                 .build();
 
         CreateSAMLConnectionResponse res = sdk.samlConnections().create()

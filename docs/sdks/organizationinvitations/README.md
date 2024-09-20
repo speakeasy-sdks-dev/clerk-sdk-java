@@ -53,7 +53,7 @@ public class Application {
         CreateOrganizationInvitationResponse res = sdk.organizationInvitations().create()
                 .organizationId("<value>")
                 .requestBody(CreateOrganizationInvitationRequestBody.builder()
-                    .emailAddress("Jena.Nienow28@yahoo.com")
+                    .emailAddress("Loyal79@yahoo.com")
                     .inviterUserId("<value>")
                     .role("<value>")
                     .build())
@@ -187,7 +187,7 @@ public class Application {
                 .organizationId("<value>")
                 .requestBody(List.of(
                     RequestBody.builder()
-                        .emailAddress("Cedrick_Ullrich87@yahoo.com")
+                        .emailAddress("Suzanne.Mills71@yahoo.com")
                         .inviterUserId("<value>")
                         .role("<value>")
                         .build()))

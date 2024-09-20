@@ -873,7 +873,7 @@ public class Application {
         VerifyPasswordResponse res = sdk.users().verifyPassword()
                 .userId("<value>")
                 .requestBody(VerifyPasswordRequestBody.builder()
-                    .password("17fSwgrbLljZqm7")
+                    .password("1fwgbLjqCRGKsWc")
                     .build())
                 .call();
 
