@@ -20,40 +20,29 @@ Create a new phone number
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors;
 import com.clerk.backend_api.models.operations.CreatePhoneNumberRequestBody;
 import com.clerk.backend_api.models.operations.CreatePhoneNumberResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
+    public static void main(String[] args) throws ClerkErrors, Exception {
+
+        Clerk sdk = Clerk.builder()
                 .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        CreatePhoneNumberRequestBody req = CreatePhoneNumberRequestBody.builder()
                 .build();
 
-            CreatePhoneNumberRequestBody req = CreatePhoneNumberRequestBody.builder()
-                .build();
-
-            CreatePhoneNumberResponse res = sdk.phoneNumbers().create()
+        CreatePhoneNumberResponse res = sdk.phoneNumbers().create()
                 .request(req)
                 .call();
 
-            if (res.phoneNumber().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.phoneNumber().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -86,36 +75,25 @@ Returns the details of a phone number
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors;
 import com.clerk.backend_api.models.operations.GetPhoneNumberResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors, Exception {
 
-            GetPhoneNumberResponse res = sdk.phoneNumbers().get()
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        GetPhoneNumberResponse res = sdk.phoneNumbers().get()
                 .phoneNumberId("<value>")
                 .call();
 
-            if (res.phoneNumber().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.phoneNumber().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -148,36 +126,25 @@ Delete the phone number with the given ID
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors;
 import com.clerk.backend_api.models.operations.DeletePhoneNumberResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors, Exception {
 
-            DeletePhoneNumberResponse res = sdk.phoneNumbers().delete()
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        DeletePhoneNumberResponse res = sdk.phoneNumbers().delete()
                 .phoneNumberId("<value>")
                 .call();
 
-            if (res.deletedObject().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.deletedObject().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -210,39 +177,28 @@ Updates a phone number
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors;
 import com.clerk.backend_api.models.operations.UpdatePhoneNumberRequestBody;
 import com.clerk.backend_api.models.operations.UpdatePhoneNumberResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors, Exception {
 
-            UpdatePhoneNumberResponse res = sdk.phoneNumbers().update()
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        UpdatePhoneNumberResponse res = sdk.phoneNumbers().update()
                 .phoneNumberId("<value>")
                 .requestBody(UpdatePhoneNumberRequestBody.builder()
                     .build())
                 .call();
 
-            if (res.phoneNumber().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.phoneNumber().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
