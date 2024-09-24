@@ -18,19 +18,19 @@ public class RevokeOrganizationInvitationRequestBuilder {
         this.sdk = sdk;
     }
 
-    public RevokeOrganizationInvitationRequestBuilder organizationId(java.lang.String organizationId) {
+    public RevokeOrganizationInvitationRequestBuilder organizationId(String organizationId) {
         Utils.checkNotNull(organizationId, "organizationId");
         this.organizationId = organizationId;
         return this;
     }
 
-    public RevokeOrganizationInvitationRequestBuilder invitationId(java.lang.String invitationId) {
+    public RevokeOrganizationInvitationRequestBuilder invitationId(String invitationId) {
         Utils.checkNotNull(invitationId, "invitationId");
         this.invitationId = invitationId;
         return this;
     }
 
-    public RevokeOrganizationInvitationRequestBuilder requestBody(com.clerk.backend_api.models.operations.RevokeOrganizationInvitationRequestBody requestBody) {
+    public RevokeOrganizationInvitationRequestBuilder requestBody(RevokeOrganizationInvitationRequestBody requestBody) {
         Utils.checkNotNull(requestBody, "requestBody");
         this.requestBody = requestBody;
         return this;
