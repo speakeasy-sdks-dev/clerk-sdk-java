@@ -21,41 +21,30 @@ Also, trying to create an invitation for an email address that already exists in
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors;
 import com.clerk.backend_api.models.operations.CreateInvitationRequestBody;
 import com.clerk.backend_api.models.operations.CreateInvitationResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
+    public static void main(String[] args) throws ClerkErrors, Exception {
+
+        Clerk sdk = Clerk.builder()
                 .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        CreateInvitationRequestBody req = CreateInvitationRequestBody.builder()
+                .emailAddress("Loyal79@yahoo.com")
                 .build();
 
-            CreateInvitationRequestBody req = CreateInvitationRequestBody.builder()
-                .emailAddress("<value>")
-                .build();
-
-            CreateInvitationResponse res = sdk.invitations().create()
+        CreateInvitationResponse res = sdk.invitations().create()
                 .request(req)
                 .call();
 
-            if (res.invitation().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.invitation().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -94,24 +83,19 @@ import java.lang.Exception;
 public class Application {
 
     public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
 
-            sdk.invitations().list()
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        sdk.invitations().list()
                 .limit(10L)
                 .offset(0L)
                 .status(QueryParamStatus.REVOKED)
                 .callAsStreamUnwrapped()
-                .forEach(item -> {
-                   // handle item
-                });
-
-        } catch (Exception e) {
-            // handle exception
-            throw e;
-        }
+            .forEach(item -> {
+               // handle item
+            });
 
     }
 }
@@ -149,36 +133,25 @@ Only active (i.e. non-revoked) invitations can be revoked.
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors;
 import com.clerk.backend_api.models.operations.RevokeInvitationResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors, Exception {
 
-            RevokeInvitationResponse res = sdk.invitations().revoke()
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        RevokeInvitationResponse res = sdk.invitations().revoke()
                 .invitationId("<value>")
                 .call();
 
-            if (res.invitationRevoked().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.invitationRevoked().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```

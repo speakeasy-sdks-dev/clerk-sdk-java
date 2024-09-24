@@ -18,31 +18,22 @@ It is used by Clerk SDKs when the user's authentication state cannot be immediat
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
 import com.clerk.backend_api.models.operations.GetPublicInterstitialResponse;
 import java.lang.Exception;
 
 public class Application {
 
     public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .build();
 
-            GetPublicInterstitialResponse res = sdk.miscellaneous().getPublicInterstitial()
+        Clerk sdk = Clerk.builder()
+            .build();
+
+        GetPublicInterstitialResponse res = sdk.miscellaneous().getPublicInterstitial()
                 .frontendApi("<value>")
                 .publishableKey("<value>")
                 .call();
 
-            // handle response
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
-        }
-
+        // handle response
     }
 }
 ```
