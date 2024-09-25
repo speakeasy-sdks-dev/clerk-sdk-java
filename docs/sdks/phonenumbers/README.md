@@ -20,14 +20,14 @@ Create a new phone number
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.ClerkErrors;
+import com.clerk.backend_api.models.errors.ClerkErrors7;
 import com.clerk.backend_api.models.operations.CreatePhoneNumberRequestBody;
 import com.clerk.backend_api.models.operations.CreatePhoneNumberResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws ClerkErrors, Exception {
+    public static void main(String[] args) throws ClerkErrors7, Exception {
 
         Clerk sdk = Clerk.builder()
                 .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
@@ -59,10 +59,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 400,401,403,404,422       | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
+| Error Object               | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| models/errors/ClerkErrors7 | 400,401,403,404,422        | application/json           |
+| models/errors/SDKError     | 4xx-5xx                    | \*\/*                      |
 
 
 ## get
@@ -75,20 +75,20 @@ Returns the details of a phone number
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.ClerkErrors;
+import com.clerk.backend_api.models.errors.ClerkErrors8;
 import com.clerk.backend_api.models.operations.GetPhoneNumberResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws ClerkErrors, Exception {
+    public static void main(String[] args) throws ClerkErrors8, Exception {
 
         Clerk sdk = Clerk.builder()
                 .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
             .build();
 
         GetPhoneNumberResponse res = sdk.phoneNumbers().get()
-                .phoneNumberId("<value>")
+                .phoneNumberId("<id>")
                 .call();
 
         if (res.phoneNumber().isPresent()) {
@@ -110,10 +110,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 400,401,403,404           | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
+| Error Object               | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| models/errors/ClerkErrors8 | 400,401,403,404            | application/json           |
+| models/errors/SDKError     | 4xx-5xx                    | \*\/*                      |
 
 
 ## delete
@@ -126,20 +126,20 @@ Delete the phone number with the given ID
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.ClerkErrors;
+import com.clerk.backend_api.models.errors.ClerkErrors9;
 import com.clerk.backend_api.models.operations.DeletePhoneNumberResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws ClerkErrors, Exception {
+    public static void main(String[] args) throws ClerkErrors9, Exception {
 
         Clerk sdk = Clerk.builder()
                 .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
             .build();
 
         DeletePhoneNumberResponse res = sdk.phoneNumbers().delete()
-                .phoneNumberId("<value>")
+                .phoneNumberId("<id>")
                 .call();
 
         if (res.deletedObject().isPresent()) {
@@ -161,10 +161,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 400,401,403,404           | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
+| Error Object               | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| models/errors/ClerkErrors9 | 400,401,403,404            | application/json           |
+| models/errors/SDKError     | 4xx-5xx                    | \*\/*                      |
 
 
 ## update
@@ -177,21 +177,21 @@ Updates a phone number
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.ClerkErrors;
+import com.clerk.backend_api.models.errors.ClerkErrors10;
 import com.clerk.backend_api.models.operations.UpdatePhoneNumberRequestBody;
 import com.clerk.backend_api.models.operations.UpdatePhoneNumberResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws ClerkErrors, Exception {
+    public static void main(String[] args) throws ClerkErrors10, Exception {
 
         Clerk sdk = Clerk.builder()
                 .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
             .build();
 
         UpdatePhoneNumberResponse res = sdk.phoneNumbers().update()
-                .phoneNumberId("<value>")
+                .phoneNumberId("<id>")
                 .requestBody(UpdatePhoneNumberRequestBody.builder()
                     .build())
                 .call();
@@ -216,7 +216,7 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 400,401,403,404           | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
+| Error Object                | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors10 | 400,401,403,404             | application/json            |
+| models/errors/SDKError      | 4xx-5xx                     | \*\/*                       |

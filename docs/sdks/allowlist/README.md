@@ -19,13 +19,13 @@ Get a list of all identifiers allowed to sign up to an instance
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.ClerkErrors;
+import com.clerk.backend_api.models.errors.ClerkErrors36;
 import com.clerk.backend_api.models.operations.ListAllowlistIdentifiersResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws ClerkErrors, Exception {
+    public static void main(String[] args) throws ClerkErrors36, Exception {
 
         Clerk sdk = Clerk.builder()
                 .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
@@ -47,10 +47,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 401,402                   | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
+| Error Object                | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors36 | 401,402                     | application/json            |
+| models/errors/SDKError      | 4xx-5xx                     | \*\/*                       |
 
 
 ## create
@@ -63,14 +63,14 @@ Create an identifier allowed to sign up to an instance
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.ClerkErrors;
+import com.clerk.backend_api.models.errors.ClerkErrors37;
 import com.clerk.backend_api.models.operations.CreateAllowlistIdentifierRequestBody;
 import com.clerk.backend_api.models.operations.CreateAllowlistIdentifierResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws ClerkErrors, Exception {
+    public static void main(String[] args) throws ClerkErrors37, Exception {
 
         Clerk sdk = Clerk.builder()
                 .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
@@ -103,10 +103,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 400,402,422               | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
+| Error Object                | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors37 | 400,402,422                 | application/json            |
+| models/errors/SDKError      | 4xx-5xx                     | \*\/*                       |
 
 
 ## delete
@@ -119,20 +119,20 @@ Delete an identifier from the instance allow-list
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.ClerkErrors;
+import com.clerk.backend_api.models.errors.ClerkErrors38;
 import com.clerk.backend_api.models.operations.DeleteAllowlistIdentifierResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws ClerkErrors, Exception {
+    public static void main(String[] args) throws ClerkErrors38, Exception {
 
         Clerk sdk = Clerk.builder()
                 .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
             .build();
 
         DeleteAllowlistIdentifierResponse res = sdk.allowlist().delete()
-                .identifierId("<value>")
+                .identifierId("<id>")
                 .call();
 
         if (res.deletedObject().isPresent()) {
@@ -154,7 +154,7 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 402,404                   | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
+| Error Object                | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors38 | 402,404                     | application/json            |
+| models/errors/SDKError      | 4xx-5xx                     | \*\/*                       |

@@ -20,14 +20,14 @@ You can optionally supply a different duration in seconds using the `expires_in_
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.ClerkErrors;
+import com.clerk.backend_api.models.errors.ClerkErrors77;
 import com.clerk.backend_api.models.operations.CreateSignInTokenRequestBody;
 import com.clerk.backend_api.models.operations.CreateSignInTokenResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws ClerkErrors, Exception {
+    public static void main(String[] args) throws ClerkErrors77, Exception {
 
         Clerk sdk = Clerk.builder()
                 .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
@@ -59,10 +59,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 404,422                   | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
+| Error Object                | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors77 | 404,422                     | application/json            |
+| models/errors/SDKError      | 4xx-5xx                     | \*\/*                       |
 
 
 ## revoke
@@ -75,20 +75,20 @@ Revokes a pending sign-in token
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.ClerkErrors;
+import com.clerk.backend_api.models.errors.ClerkErrors78;
 import com.clerk.backend_api.models.operations.RevokeSignInTokenResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws ClerkErrors, Exception {
+    public static void main(String[] args) throws ClerkErrors78, Exception {
 
         Clerk sdk = Clerk.builder()
                 .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
             .build();
 
         RevokeSignInTokenResponse res = sdk.signInTokens().revoke()
-                .signInTokenId("<value>")
+                .signInTokenId("<id>")
                 .call();
 
         if (res.signInToken().isPresent()) {
@@ -110,7 +110,7 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 400,404                   | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
+| Error Object                | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors78 | 400,404                     | application/json            |
+| models/errors/SDKError      | 4xx-5xx                     | \*\/*                       |

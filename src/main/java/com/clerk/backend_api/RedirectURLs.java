@@ -6,7 +6,9 @@ package com.clerk.backend_api;
 
 import com.clerk.backend_api.models.components.DeletedObject;
 import com.clerk.backend_api.models.components.RedirectURL;
-import com.clerk.backend_api.models.errors.ClerkErrors;
+import com.clerk.backend_api.models.errors.ClerkErrors75;
+import com.clerk.backend_api.models.errors.ClerkErrors76;
+import com.clerk.backend_api.models.errors.ClerkErrors77;
 import com.clerk.backend_api.models.errors.SDKError;
 import com.clerk.backend_api.models.operations.CreateRedirectURLRequestBody;
 import com.clerk.backend_api.models.operations.CreateRedirectURLRequestBuilder;
@@ -286,9 +288,9 @@ public class RedirectURLs implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "400", "422")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors75 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors75>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -424,9 +426,9 @@ public class RedirectURLs implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "404")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors76 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors76>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -562,9 +564,9 @@ public class RedirectURLs implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "404")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors77 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors77>() {});
                 throw _out;
             } else {
                 throw new SDKError(

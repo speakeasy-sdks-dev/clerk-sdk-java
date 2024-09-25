@@ -7,7 +7,11 @@ package com.clerk.backend_api;
 import com.clerk.backend_api.models.components.DeletedObject;
 import com.clerk.backend_api.models.components.SAMLConnection;
 import com.clerk.backend_api.models.components.SAMLConnections;
-import com.clerk.backend_api.models.errors.ClerkErrors;
+import com.clerk.backend_api.models.errors.ClerkErrors85;
+import com.clerk.backend_api.models.errors.ClerkErrors86;
+import com.clerk.backend_api.models.errors.ClerkErrors87;
+import com.clerk.backend_api.models.errors.ClerkErrors88;
+import com.clerk.backend_api.models.errors.ClerkErrors89;
 import com.clerk.backend_api.models.errors.SDKError;
 import com.clerk.backend_api.models.operations.CreateSAMLConnectionRequestBody;
 import com.clerk.backend_api.models.operations.CreateSAMLConnectionRequestBuilder;
@@ -224,9 +228,9 @@ public class SamlConnections implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "402", "403", "422")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors85 _out = Utils.mapper().readValue(
                     new String(_fullResponse, StandardCharsets.UTF_8),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors85>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -374,9 +378,9 @@ public class SamlConnections implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "402", "403", "422")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors86 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors86>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -512,9 +516,9 @@ public class SamlConnections implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "402", "403", "404")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors87 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors87>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -666,9 +670,9 @@ public class SamlConnections implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "402", "403", "404", "422")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors88 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors88>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -804,9 +808,9 @@ public class SamlConnections implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "402", "403", "404")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors89 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors89>() {});
                 throw _out;
             } else {
                 throw new SDKError(

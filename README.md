@@ -115,7 +115,7 @@ This example shows how to create an actor token that can be used to impersonate 
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.ClerkErrors;
+import com.clerk.backend_api.models.errors.ClerkErrors44;
 import com.clerk.backend_api.models.operations.CreateActorTokenRequestBody;
 import com.clerk.backend_api.models.operations.CreateActorTokenResponse;
 import java.lang.Exception;
@@ -123,14 +123,14 @@ import java.util.Map;
 
 public class Application {
 
-    public static void main(String[] args) throws ClerkErrors, Exception {
+    public static void main(String[] args) throws ClerkErrors44, Exception {
 
         Clerk sdk = Clerk.builder()
                 .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
             .build();
 
         CreateActorTokenRequestBody req = CreateActorTokenRequestBody.builder()
-                .userId("<value>")
+                .userId("<id>")
                 .actor(Map.ofEntries(
                     Map.entry("sub", "user_2OEpKhcCN1Lat9NQ0G6puh7q5Rb")))
                 .build();
@@ -357,19 +357,19 @@ Here's an example of one such pagination call:
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.ClerkErrors;
+import com.clerk.backend_api.models.errors.ClerkErrors33;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws ClerkErrors, Exception {
+    public static void main(String[] args) throws ClerkErrors33, Exception {
 
         Clerk sdk = Clerk.builder()
                 .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
             .build();
 
         sdk.users().getOrganizationMemberships()
-                .userId("<value>")
+                .userId("<id>")
                 .limit(10L)
                 .offset(0L)
                 .callAsStreamUnwrapped()
@@ -387,10 +387,10 @@ public class Application {
 
 Handling errors in this SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will throw the appropriate Exception type.
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 400,401,404               | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
+| Error Object               | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| models/errors/ClerkErrors1 | 400,401,404                | application/json           |
+| models/errors/SDKError     | 4xx-5xx                    | \*\/*                      |
 
 ### Example
 
@@ -398,14 +398,14 @@ Handling errors in this SDK should largely match your expectations.  All operati
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.ClerkErrors;
+import com.clerk.backend_api.models.errors.ClerkErrors1;
 import com.clerk.backend_api.models.operations.VerifyClientRequestBody;
 import com.clerk.backend_api.models.operations.VerifyClientResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws ClerkErrors, Exception {
+    public static void main(String[] args) throws ClerkErrors1, Exception {
 
         Clerk sdk = Clerk.builder()
                 .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")

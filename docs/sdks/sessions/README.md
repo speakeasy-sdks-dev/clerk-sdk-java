@@ -24,14 +24,14 @@ moving forward at least one of `client_id` or `user_id` parameters should be pro
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.ClerkErrors;
+import com.clerk.backend_api.models.errors.ClerkErrors11;
 import com.clerk.backend_api.models.operations.GetSessionListRequest;
 import com.clerk.backend_api.models.operations.GetSessionListResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws ClerkErrors, Exception {
+    public static void main(String[] args) throws ClerkErrors11, Exception {
 
         Clerk sdk = Clerk.builder()
                 .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
@@ -63,10 +63,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 400,401,422               | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
+| Error Object                | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors11 | 400,401,422                 | application/json            |
+| models/errors/SDKError      | 4xx-5xx                     | \*\/*                       |
 
 
 ## get
@@ -79,20 +79,20 @@ Retrieve the details of a session
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.ClerkErrors;
+import com.clerk.backend_api.models.errors.ClerkErrors12;
 import com.clerk.backend_api.models.operations.GetSessionResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws ClerkErrors, Exception {
+    public static void main(String[] args) throws ClerkErrors12, Exception {
 
         Clerk sdk = Clerk.builder()
                 .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
             .build();
 
         GetSessionResponse res = sdk.sessions().get()
-                .sessionId("<value>")
+                .sessionId("<id>")
                 .call();
 
         if (res.session().isPresent()) {
@@ -114,10 +114,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 400,401,404               | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
+| Error Object                | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors12 | 400,401,404                 | application/json            |
+| models/errors/SDKError      | 4xx-5xx                     | \*\/*                       |
 
 
 ## revoke
@@ -131,20 +131,20 @@ In multi-session mode, a revoked session will still be returned along with its c
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.ClerkErrors;
+import com.clerk.backend_api.models.errors.ClerkErrors13;
 import com.clerk.backend_api.models.operations.RevokeSessionResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws ClerkErrors, Exception {
+    public static void main(String[] args) throws ClerkErrors13, Exception {
 
         Clerk sdk = Clerk.builder()
                 .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
             .build();
 
         RevokeSessionResponse res = sdk.sessions().revoke()
-                .sessionId("<value>")
+                .sessionId("<id>")
                 .call();
 
         if (res.session().isPresent()) {
@@ -166,10 +166,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 400,401,404               | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
+| Error Object                | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors13 | 400,401,404                 | application/json            |
+| models/errors/SDKError      | 4xx-5xx                     | \*\/*                       |
 
 
 ## ~~verify~~
@@ -187,21 +187,21 @@ WARNING: This endpoint is deprecated and will be removed in future versions. We 
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.ClerkErrors;
+import com.clerk.backend_api.models.errors.ClerkErrors14;
 import com.clerk.backend_api.models.operations.VerifySessionRequestBody;
 import com.clerk.backend_api.models.operations.VerifySessionResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws ClerkErrors, Exception {
+    public static void main(String[] args) throws ClerkErrors14, Exception {
 
         Clerk sdk = Clerk.builder()
                 .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
             .build();
 
         VerifySessionResponse res = sdk.sessions().verify()
-                .sessionId("<value>")
+                .sessionId("<id>")
                 .requestBody(VerifySessionRequestBody.builder()
                     .build())
                 .call();
@@ -226,10 +226,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 400,401,404,410           | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
+| Error Object                | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors14 | 400,401,404,410             | application/json            |
+| models/errors/SDKError      | 4xx-5xx                     | \*\/*                       |
 
 
 ## createTokenFromTemplate
@@ -242,20 +242,20 @@ Creates a JSON Web Token(JWT) based on a session and a JWT Template name defined
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.ClerkErrors;
+import com.clerk.backend_api.models.errors.ClerkErrors15;
 import com.clerk.backend_api.models.operations.CreateSessionTokenFromTemplateResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws ClerkErrors, Exception {
+    public static void main(String[] args) throws ClerkErrors15, Exception {
 
         Clerk sdk = Clerk.builder()
                 .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
             .build();
 
         CreateSessionTokenFromTemplateResponse res = sdk.sessions().createTokenFromTemplate()
-                .sessionId("<value>")
+                .sessionId("<id>")
                 .templateName("<value>")
                 .call();
 
@@ -279,7 +279,7 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 401,404                   | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
+| Error Object                | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors15 | 401,404                     | application/json            |
+| models/errors/SDKError      | 4xx-5xx                     | \*\/*                       |

@@ -19,7 +19,7 @@ The `actor` parameter needs to include at least a "sub" key whose value is the I
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.ClerkErrors;
+import com.clerk.backend_api.models.errors.ClerkErrors44;
 import com.clerk.backend_api.models.operations.CreateActorTokenRequestBody;
 import com.clerk.backend_api.models.operations.CreateActorTokenResponse;
 import java.lang.Exception;
@@ -27,14 +27,14 @@ import java.util.Map;
 
 public class Application {
 
-    public static void main(String[] args) throws ClerkErrors, Exception {
+    public static void main(String[] args) throws ClerkErrors44, Exception {
 
         Clerk sdk = Clerk.builder()
                 .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
             .build();
 
         CreateActorTokenRequestBody req = CreateActorTokenRequestBody.builder()
-                .userId("<value>")
+                .userId("<id>")
                 .actor(Map.ofEntries(
                     Map.entry("sub", "user_2OEpKhcCN1Lat9NQ0G6puh7q5Rb")))
                 .build();
@@ -62,10 +62,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 400,402,422               | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
+| Error Object                | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors44 | 400,402,422                 | application/json            |
+| models/errors/SDKError      | 4xx-5xx                     | \*\/*                       |
 
 
 ## revokeToken
@@ -78,20 +78,20 @@ Revokes a pending actor token.
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.ClerkErrors;
+import com.clerk.backend_api.models.errors.ClerkErrors45;
 import com.clerk.backend_api.models.operations.RevokeActorTokenResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws ClerkErrors, Exception {
+    public static void main(String[] args) throws ClerkErrors45, Exception {
 
         Clerk sdk = Clerk.builder()
                 .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
             .build();
 
         RevokeActorTokenResponse res = sdk.actors().revokeToken()
-                .actorTokenId("<value>")
+                .actorTokenId("<id>")
                 .call();
 
         if (res.actorToken().isPresent()) {
@@ -113,7 +113,7 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 400,404                   | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
+| Error Object                | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors45 | 400,404                     | application/json            |
+| models/errors/SDKError      | 4xx-5xx                     | \*\/*                       |

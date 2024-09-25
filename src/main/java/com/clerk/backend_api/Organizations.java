@@ -7,7 +7,13 @@ package com.clerk.backend_api;
 import com.clerk.backend_api.models.components.DeletedObject;
 import com.clerk.backend_api.models.components.Organization;
 import com.clerk.backend_api.models.components.OrganizationWithLogo;
-import com.clerk.backend_api.models.errors.ClerkErrors;
+import com.clerk.backend_api.models.errors.ClerkErrors57;
+import com.clerk.backend_api.models.errors.ClerkErrors58;
+import com.clerk.backend_api.models.errors.ClerkErrors59;
+import com.clerk.backend_api.models.errors.ClerkErrors60;
+import com.clerk.backend_api.models.errors.ClerkErrors61;
+import com.clerk.backend_api.models.errors.ClerkErrors62;
+import com.clerk.backend_api.models.errors.ClerkErrors63;
 import com.clerk.backend_api.models.errors.SDKError;
 import com.clerk.backend_api.models.operations.CreateOrganizationRequestBody;
 import com.clerk.backend_api.models.operations.CreateOrganizationRequestBuilder;
@@ -184,9 +190,9 @@ public class Organizations implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "400", "403", "422")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors57 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors57>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -358,9 +364,9 @@ public class Organizations implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "400", "403", "422")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors58 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors58>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -496,9 +502,9 @@ public class Organizations implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "403", "404")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors59 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors59>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -650,9 +656,9 @@ public class Organizations implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "402", "404", "422")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors60 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors60>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -792,9 +798,9 @@ public class Organizations implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "404")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors61 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors61>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -952,9 +958,9 @@ public class Organizations implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "400", "401", "404", "422")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors61 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors61>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -1124,9 +1130,9 @@ public class Organizations implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "400", "403", "404", "413")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors62 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors62>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -1260,9 +1266,9 @@ public class Organizations implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "404")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors63 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors63>() {});
                 throw _out;
             } else {
                 throw new SDKError(

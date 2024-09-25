@@ -6,7 +6,10 @@ package com.clerk.backend_api;
 
 import com.clerk.backend_api.models.components.DeletedObject;
 import com.clerk.backend_api.models.components.PhoneNumber;
-import com.clerk.backend_api.models.errors.ClerkErrors;
+import com.clerk.backend_api.models.errors.ClerkErrors10;
+import com.clerk.backend_api.models.errors.ClerkErrors7;
+import com.clerk.backend_api.models.errors.ClerkErrors8;
+import com.clerk.backend_api.models.errors.ClerkErrors9;
 import com.clerk.backend_api.models.errors.SDKError;
 import com.clerk.backend_api.models.operations.CreatePhoneNumberRequestBody;
 import com.clerk.backend_api.models.operations.CreatePhoneNumberRequestBuilder;
@@ -174,9 +177,9 @@ public class PhoneNumbers implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "400", "401", "403", "404", "422")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors7 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors7>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -312,9 +315,9 @@ public class PhoneNumbers implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "400", "401", "403", "404")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors8 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors8>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -450,9 +453,9 @@ public class PhoneNumbers implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "400", "401", "403", "404")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors9 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors9>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -613,9 +616,9 @@ public class PhoneNumbers implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "400", "401", "403", "404")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors10 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors10>() {});
                 throw _out;
             } else {
                 throw new SDKError(

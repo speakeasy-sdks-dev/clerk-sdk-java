@@ -5,7 +5,11 @@
 package com.clerk.backend_api;
 
 import com.clerk.backend_api.models.components.Session;
-import com.clerk.backend_api.models.errors.ClerkErrors;
+import com.clerk.backend_api.models.errors.ClerkErrors11;
+import com.clerk.backend_api.models.errors.ClerkErrors12;
+import com.clerk.backend_api.models.errors.ClerkErrors13;
+import com.clerk.backend_api.models.errors.ClerkErrors14;
+import com.clerk.backend_api.models.errors.ClerkErrors15;
 import com.clerk.backend_api.models.errors.SDKError;
 import com.clerk.backend_api.models.operations.CreateSessionTokenFromTemplateRequest;
 import com.clerk.backend_api.models.operations.CreateSessionTokenFromTemplateRequestBuilder;
@@ -170,9 +174,9 @@ public class Sessions implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "400", "401", "422")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors11 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors11>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -308,9 +312,9 @@ public class Sessions implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "400", "401", "404")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors12 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors12>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -448,9 +452,9 @@ public class Sessions implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "400", "401", "404")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors13 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors13>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -626,9 +630,9 @@ public class Sessions implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "400", "401", "404", "410")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors14 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors14>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -767,9 +771,9 @@ public class Sessions implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "401", "404")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors15 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors15>() {});
                 throw _out;
             } else {
                 throw new SDKError(

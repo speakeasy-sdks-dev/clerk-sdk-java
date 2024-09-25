@@ -37,24 +37,24 @@ When the organization invitation is accepted, the metadata will be transferred t
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.ClerkErrors;
+import com.clerk.backend_api.models.errors.ClerkErrors63;
 import com.clerk.backend_api.models.operations.CreateOrganizationInvitationRequestBody;
 import com.clerk.backend_api.models.operations.CreateOrganizationInvitationResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws ClerkErrors, Exception {
+    public static void main(String[] args) throws ClerkErrors63, Exception {
 
         Clerk sdk = Clerk.builder()
                 .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
             .build();
 
         CreateOrganizationInvitationResponse res = sdk.organizationInvitations().create()
-                .organizationId("<value>")
+                .organizationId("<id>")
                 .requestBody(CreateOrganizationInvitationRequestBody.builder()
                     .emailAddress("Loyal79@yahoo.com")
-                    .inviterUserId("<value>")
+                    .inviterUserId("<id>")
                     .role("<value>")
                     .build())
                 .call();
@@ -79,10 +79,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 400,403,404,422           | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
+| Error Object                | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors63 | 400,403,404,422             | application/json            |
+| models/errors/SDKError      | 4xx-5xx                     | \*\/*                       |
 
 
 ## list
@@ -100,20 +100,20 @@ Any invitations created as a result of an Organization Domain are not included i
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.ClerkErrors;
+import com.clerk.backend_api.models.errors.ClerkErrors64;
 import com.clerk.backend_api.models.operations.ListOrganizationInvitationsQueryParamStatus;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws ClerkErrors, Exception {
+    public static void main(String[] args) throws ClerkErrors64, Exception {
 
         Clerk sdk = Clerk.builder()
                 .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
             .build();
 
         sdk.organizationInvitations().list()
-                .organizationId("<value>")
+                .organizationId("<id>")
                 .limit(10L)
                 .offset(0L)
                 .status(ListOrganizationInvitationsQueryParamStatus.REVOKED)
@@ -141,10 +141,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 400,404                   | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
+| Error Object                | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors64 | 400,404                     | application/json            |
+| models/errors/SDKError      | 4xx-5xx                     | \*\/*                       |
 
 
 ## createBulk
@@ -169,7 +169,7 @@ When the organization invitation is accepted, the metadata will be transferred t
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.ClerkErrors;
+import com.clerk.backend_api.models.errors.ClerkErrors65;
 import com.clerk.backend_api.models.operations.CreateOrganizationInvitationBulkResponse;
 import com.clerk.backend_api.models.operations.RequestBody;
 import java.lang.Exception;
@@ -177,18 +177,18 @@ import java.util.List;
 
 public class Application {
 
-    public static void main(String[] args) throws ClerkErrors, Exception {
+    public static void main(String[] args) throws ClerkErrors65, Exception {
 
         Clerk sdk = Clerk.builder()
                 .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
             .build();
 
         CreateOrganizationInvitationBulkResponse res = sdk.organizationInvitations().createBulk()
-                .organizationId("<value>")
+                .organizationId("<id>")
                 .requestBody(List.of(
                     RequestBody.builder()
                         .emailAddress("Suzanne.Mills71@yahoo.com")
-                        .inviterUserId("<value>")
+                        .inviterUserId("<id>")
                         .role("<value>")
                         .build()))
                 .call();
@@ -213,10 +213,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 400,403,404,422           | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
+| Error Object                | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors65 | 400,403,404,422             | application/json            |
+| models/errors/SDKError      | 4xx-5xx                     | \*\/*                       |
 
 
 ## ~~listPending~~
@@ -236,19 +236,19 @@ Any invitations created as a result of an Organization Domain are not included i
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.ClerkErrors;
+import com.clerk.backend_api.models.errors.ClerkErrors66;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws ClerkErrors, Exception {
+    public static void main(String[] args) throws ClerkErrors66, Exception {
 
         Clerk sdk = Clerk.builder()
                 .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
             .build();
 
         sdk.organizationInvitations().listPending()
-                .organizationId("<value>")
+                .organizationId("<id>")
                 .limit(10L)
                 .offset(0L)
                 .callAsStreamUnwrapped()
@@ -274,10 +274,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 400,404                   | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
+| Error Object                | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors66 | 400,404                     | application/json            |
+| models/errors/SDKError      | 4xx-5xx                     | \*\/*                       |
 
 
 ## get
@@ -290,21 +290,21 @@ Use this request to get an existing organization invitation by ID.
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.ClerkErrors;
+import com.clerk.backend_api.models.errors.ClerkErrors67;
 import com.clerk.backend_api.models.operations.GetOrganizationInvitationResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws ClerkErrors, Exception {
+    public static void main(String[] args) throws ClerkErrors67, Exception {
 
         Clerk sdk = Clerk.builder()
                 .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
             .build();
 
         GetOrganizationInvitationResponse res = sdk.organizationInvitations().get()
-                .organizationId("<value>")
-                .invitationId("<value>")
+                .organizationId("<id>")
+                .invitationId("<id>")
                 .call();
 
         if (res.organizationInvitation().isPresent()) {
@@ -327,10 +327,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 400,403,404               | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
+| Error Object                | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors67 | 400,403,404                 | application/json            |
+| models/errors/SDKError      | 4xx-5xx                     | \*\/*                       |
 
 
 ## revoke
@@ -347,24 +347,24 @@ Only users with "admin" role can revoke invitations.
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.ClerkErrors;
+import com.clerk.backend_api.models.errors.ClerkErrors68;
 import com.clerk.backend_api.models.operations.RevokeOrganizationInvitationRequestBody;
 import com.clerk.backend_api.models.operations.RevokeOrganizationInvitationResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws ClerkErrors, Exception {
+    public static void main(String[] args) throws ClerkErrors68, Exception {
 
         Clerk sdk = Clerk.builder()
                 .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
             .build();
 
         RevokeOrganizationInvitationResponse res = sdk.organizationInvitations().revoke()
-                .organizationId("<value>")
-                .invitationId("<value>")
+                .organizationId("<id>")
+                .invitationId("<id>")
                 .requestBody(RevokeOrganizationInvitationRequestBody.builder()
-                    .requestingUserId("<value>")
+                    .requestingUserId("<id>")
                     .build())
                 .call();
 
@@ -389,7 +389,7 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 400,403,404               | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
+| Error Object                | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors68 | 400,403,404                 | application/json            |
+| models/errors/SDKError      | 4xx-5xx                     | \*\/*                       |

@@ -5,7 +5,11 @@
 package com.clerk.backend_api;
 
 import com.clerk.backend_api.models.components.OrganizationMembership;
-import com.clerk.backend_api.models.errors.ClerkErrors;
+import com.clerk.backend_api.models.errors.ClerkErrors69;
+import com.clerk.backend_api.models.errors.ClerkErrors70;
+import com.clerk.backend_api.models.errors.ClerkErrors71;
+import com.clerk.backend_api.models.errors.ClerkErrors72;
+import com.clerk.backend_api.models.errors.ClerkErrors73;
 import com.clerk.backend_api.models.errors.SDKError;
 import com.clerk.backend_api.models.operations.CreateOrganizationMembershipRequest;
 import com.clerk.backend_api.models.operations.CreateOrganizationMembershipRequestBody;
@@ -190,9 +194,9 @@ public class OrganizationMemberships implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "400", "403", "404", "422")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors69 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors69>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -388,9 +392,9 @@ public class OrganizationMemberships implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "401", "422")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors70 _out = Utils.mapper().readValue(
                     new String(_fullResponse, StandardCharsets.UTF_8),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors70>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -545,9 +549,9 @@ public class OrganizationMemberships implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "400", "404", "422")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors71 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors71>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -686,9 +690,9 @@ public class OrganizationMemberships implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "400", "401", "404")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors72 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors72>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -847,9 +851,9 @@ public class OrganizationMemberships implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "400", "404", "422")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors73 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors73>() {});
                 throw _out;
             } else {
                 throw new SDKError(

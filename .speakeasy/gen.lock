@@ -192,6 +192,95 @@ generatedFiles:
   - docs/models/components/Web3WalletVerification.md
   - docs/models/components/Web3WalletVerificationAdmin.md
   - docs/models/errors/ClerkErrors.md
+  - docs/models/errors/ClerkErrors1.md
+  - docs/models/errors/ClerkErrors10.md
+  - docs/models/errors/ClerkErrors11.md
+  - docs/models/errors/ClerkErrors12.md
+  - docs/models/errors/ClerkErrors13.md
+  - docs/models/errors/ClerkErrors14.md
+  - docs/models/errors/ClerkErrors15.md
+  - docs/models/errors/ClerkErrors16.md
+  - docs/models/errors/ClerkErrors17.md
+  - docs/models/errors/ClerkErrors18.md
+  - docs/models/errors/ClerkErrors19.md
+  - docs/models/errors/ClerkErrors2.md
+  - docs/models/errors/ClerkErrors20.md
+  - docs/models/errors/ClerkErrors21.md
+  - docs/models/errors/ClerkErrors22.md
+  - docs/models/errors/ClerkErrors23.md
+  - docs/models/errors/ClerkErrors24.md
+  - docs/models/errors/ClerkErrors25.md
+  - docs/models/errors/ClerkErrors26.md
+  - docs/models/errors/ClerkErrors27.md
+  - docs/models/errors/ClerkErrors28.md
+  - docs/models/errors/ClerkErrors29.md
+  - docs/models/errors/ClerkErrors3.md
+  - docs/models/errors/ClerkErrors30.md
+  - docs/models/errors/ClerkErrors31.md
+  - docs/models/errors/ClerkErrors32.md
+  - docs/models/errors/ClerkErrors33.md
+  - docs/models/errors/ClerkErrors34.md
+  - docs/models/errors/ClerkErrors35.md
+  - docs/models/errors/ClerkErrors36.md
+  - docs/models/errors/ClerkErrors37.md
+  - docs/models/errors/ClerkErrors38.md
+  - docs/models/errors/ClerkErrors39.md
+  - docs/models/errors/ClerkErrors4.md
+  - docs/models/errors/ClerkErrors40.md
+  - docs/models/errors/ClerkErrors41.md
+  - docs/models/errors/ClerkErrors42.md
+  - docs/models/errors/ClerkErrors43.md
+  - docs/models/errors/ClerkErrors44.md
+  - docs/models/errors/ClerkErrors45.md
+  - docs/models/errors/ClerkErrors46.md
+  - docs/models/errors/ClerkErrors47.md
+  - docs/models/errors/ClerkErrors48.md
+  - docs/models/errors/ClerkErrors49.md
+  - docs/models/errors/ClerkErrors5.md
+  - docs/models/errors/ClerkErrors50.md
+  - docs/models/errors/ClerkErrors51.md
+  - docs/models/errors/ClerkErrors52.md
+  - docs/models/errors/ClerkErrors53.md
+  - docs/models/errors/ClerkErrors54.md
+  - docs/models/errors/ClerkErrors55.md
+  - docs/models/errors/ClerkErrors56.md
+  - docs/models/errors/ClerkErrors57.md
+  - docs/models/errors/ClerkErrors58.md
+  - docs/models/errors/ClerkErrors59.md
+  - docs/models/errors/ClerkErrors6.md
+  - docs/models/errors/ClerkErrors60.md
+  - docs/models/errors/ClerkErrors61.md
+  - docs/models/errors/ClerkErrors62.md
+  - docs/models/errors/ClerkErrors63.md
+  - docs/models/errors/ClerkErrors64.md
+  - docs/models/errors/ClerkErrors65.md
+  - docs/models/errors/ClerkErrors66.md
+  - docs/models/errors/ClerkErrors67.md
+  - docs/models/errors/ClerkErrors68.md
+  - docs/models/errors/ClerkErrors69.md
+  - docs/models/errors/ClerkErrors7.md
+  - docs/models/errors/ClerkErrors70.md
+  - docs/models/errors/ClerkErrors71.md
+  - docs/models/errors/ClerkErrors72.md
+  - docs/models/errors/ClerkErrors73.md
+  - docs/models/errors/ClerkErrors74.md
+  - docs/models/errors/ClerkErrors75.md
+  - docs/models/errors/ClerkErrors76.md
+  - docs/models/errors/ClerkErrors77.md
+  - docs/models/errors/ClerkErrors78.md
+  - docs/models/errors/ClerkErrors79.md
+  - docs/models/errors/ClerkErrors8.md
+  - docs/models/errors/ClerkErrors80.md
+  - docs/models/errors/ClerkErrors81.md
+  - docs/models/errors/ClerkErrors82.md
+  - docs/models/errors/ClerkErrors83.md
+  - docs/models/errors/ClerkErrors84.md
+  - docs/models/errors/ClerkErrors85.md
+  - docs/models/errors/ClerkErrors86.md
+  - docs/models/errors/ClerkErrors87.md
+  - docs/models/errors/ClerkErrors88.md
+  - docs/models/errors/ClerkErrors89.md
+  - docs/models/errors/ClerkErrors9.md
   - docs/models/errors/Meta.md
   - docs/models/operations/AddDomainRequestBody.md
   - docs/models/operations/AddDomainResponse.md
@@ -698,6 +787,95 @@ generatedFiles:
   - src/main/java/com/clerk/backend_api/models/components/Web3WalletVerificationAdmin.java
   - src/main/java/com/clerk/backend_api/models/errors/AuthException.java
   - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors1.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors10.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors11.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors12.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors13.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors14.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors15.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors16.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors17.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors18.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors19.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors2.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors20.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors21.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors22.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors23.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors24.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors25.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors26.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors27.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors28.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors29.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors3.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors30.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors31.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors32.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors33.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors34.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors35.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors36.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors37.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors38.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors39.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors4.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors40.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors41.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors42.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors43.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors44.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors45.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors46.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors47.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors48.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors49.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors5.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors50.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors51.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors52.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors53.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors54.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors55.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors56.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors57.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors58.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors59.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors6.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors60.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors61.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors62.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors63.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors64.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors65.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors66.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors67.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors68.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors69.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors7.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors70.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors71.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors72.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors73.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors74.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors75.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors76.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors77.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors78.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors79.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors8.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors80.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors81.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors82.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors83.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors84.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors85.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors86.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors87.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors88.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors89.java
+  - src/main/java/com/clerk/backend_api/models/errors/ClerkErrors9.java
   - src/main/java/com/clerk/backend_api/models/errors/Meta.java
   - src/main/java/com/clerk/backend_api/models/errors/SDKError.java
   - src/main/java/com/clerk/backend_api/models/operations/AddDomainRequestBody.java
@@ -1278,6 +1456,7 @@ examples:
       responses:
         "401":
           application/json: {"errors": []}
+        "200": {}
   GetTemplateList:
     speakeasy-default-get-template-list:
       parameters:
@@ -1286,6 +1465,7 @@ examples:
       responses:
         "400":
           application/json: {"errors": [{"message": "<value>", "long_message": "<value>", "code": "<value>"}, {"message": "<value>", "long_message": "<value>", "code": "<value>"}]}
+        "200": {}
   GetTemplate:
     speakeasy-default-get-template:
       parameters:
@@ -1295,6 +1475,7 @@ examples:
       responses:
         "400":
           application/json: {"errors": [{"message": "<value>", "long_message": "<value>", "code": "<value>"}, {"message": "<value>", "long_message": "<value>", "code": "<value>"}]}
+        "200": {}
   UpsertTemplate:
     speakeasy-default-upsert-template:
       parameters:
@@ -1304,6 +1485,7 @@ examples:
       responses:
         "400":
           application/json: {"errors": [{"message": "<value>", "long_message": "<value>", "code": "<value>"}]}
+        "200": {}
   RevertTemplate:
     speakeasy-default-revert-template:
       parameters:
@@ -1313,6 +1495,7 @@ examples:
       responses:
         "400":
           application/json: {"errors": [{"message": "<value>", "long_message": "<value>", "code": "<value>"}, {"message": "<value>", "long_message": "<value>", "code": "<value>"}]}
+        "200": {}
   PreviewTemplate:
     speakeasy-default-preview-template:
       parameters:
@@ -1322,6 +1505,7 @@ examples:
       responses:
         "400":
           application/json: {"errors": [{"message": "<value>", "long_message": "<value>", "code": "<value>"}]}
+        "200": {}
   ToggleTemplateDelivery:
     speakeasy-default-toggle-template-delivery:
       parameters:
@@ -1331,6 +1515,7 @@ examples:
       responses:
         "400":
           application/json: {"errors": []}
+        "200": {}
   GetUserList:
     "":
       parameters:
@@ -1485,6 +1670,7 @@ examples:
       responses:
         "500":
           application/json: {"errors": []}
+        "200": {}
   VerifyTOTP:
     speakeasy-default-verify-TOTP:
       parameters:
@@ -1493,6 +1679,7 @@ examples:
       responses:
         "500":
           application/json: {"errors": []}
+        "200": {}
   DisableMFA:
     speakeasy-default-disable-MFA:
       parameters:
@@ -1501,6 +1688,7 @@ examples:
       responses:
         "404":
           application/json: {"errors": [{"message": "<value>", "long_message": "<value>", "code": "<value>"}, {"message": "<value>", "long_message": "<value>", "code": "<value>"}]}
+        "200": {}
   CreateInvitation:
     speakeasy-default-create-invitation:
       responses:
@@ -1528,11 +1716,13 @@ examples:
       responses:
         "401":
           application/json: {"errors": [{"message": "<value>", "long_message": "<value>", "code": "<value>"}, {"message": "<value>", "long_message": "<value>", "code": "<value>"}]}
+        "200": {}
   CreateAllowlistIdentifier:
     speakeasy-default-create-allowlist-identifier:
       responses:
         "400":
           application/json: {"errors": [{"message": "<value>", "long_message": "<value>", "code": "<value>"}]}
+        "200": {}
   DeleteAllowlistIdentifier:
     speakeasy-default-delete-allowlist-identifier:
       parameters:
@@ -1555,6 +1745,7 @@ examples:
       responses:
         "400":
           application/json: {"errors": [{"message": "<value>", "long_message": "<value>", "code": "<value>"}]}
+        "200": {}
   DeleteBlocklistIdentifier:
     speakeasy-default-delete-blocklist-identifier:
       parameters:
@@ -1570,6 +1761,7 @@ examples:
       responses:
         "402":
           application/json: {"errors": []}
+        "200": {}
   UpdateProductionInstanceDomain:
     speakeasy-default-update-production-instance-domain:
       responses:
@@ -1585,6 +1777,7 @@ examples:
       responses:
         "402":
           application/json: {"errors": []}
+        "200": {}
   ChangeProductionInstanceDomain:
     speakeasy-default-change-production-instance-domain:
       responses:
@@ -1793,6 +1986,7 @@ examples:
       responses:
         "400":
           application/json: {"errors": []}
+        "200": {}
   ListOrganizationInvitations:
     speakeasy-default-list-organization-invitations:
       parameters:
@@ -1836,6 +2030,7 @@ examples:
       responses:
         "400":
           application/json: {"errors": [{"message": "<value>", "long_message": "<value>", "code": "<value>"}, {"message": "<value>", "long_message": "<value>", "code": "<value>"}]}
+        "200": {}
   RevokeOrganizationInvitation:
     speakeasy-default-revoke-organization-invitation:
       parameters:
@@ -1847,6 +2042,7 @@ examples:
       responses:
         "400":
           application/json: {"errors": [{"message": "<value>", "long_message": "<value>", "code": "<value>"}, {"message": "<value>", "long_message": "<value>", "code": "<value>"}, {"message": "<value>", "long_message": "<value>", "code": "<value>"}]}
+        "200": {}
   CreateOrganizationMembership:
     speakeasy-default-create-organization-membership:
       parameters:
@@ -1857,6 +2053,7 @@ examples:
       responses:
         "400":
           application/json: {"errors": [{"message": "<value>", "long_message": "<value>", "code": "<value>"}]}
+        "200": {}
   ListOrganizationMemberships:
     speakeasy-default-list-organization-memberships:
       parameters:
@@ -1879,6 +2076,7 @@ examples:
       responses:
         "400":
           application/json: {"errors": [{"message": "<value>", "long_message": "<value>", "code": "<value>"}, {"message": "<value>", "long_message": "<value>", "code": "<value>"}, {"message": "<value>", "long_message": "<value>", "code": "<value>"}]}
+        "200": {}
   DeleteOrganizationMembership:
     speakeasy-default-delete-organization-membership:
       parameters:
@@ -1888,6 +2086,7 @@ examples:
       responses:
         "400":
           application/json: {"errors": [{"message": "<value>", "long_message": "<value>", "code": "<value>"}, {"message": "<value>", "long_message": "<value>", "code": "<value>"}]}
+        "200": {}
   UpdateOrganizationMembershipMetadata:
     speakeasy-default-update-organization-membership-metadata:
       parameters:
@@ -1897,6 +2096,7 @@ examples:
       responses:
         "400":
           application/json: {"errors": [{"message": "<value>", "long_message": "<value>", "code": "<value>"}, {"message": "<value>", "long_message": "<value>", "code": "<value>"}]}
+        "200": {}
   VerifyDomainProxy:
     speakeasy-default-verify-domain-proxy:
       responses:

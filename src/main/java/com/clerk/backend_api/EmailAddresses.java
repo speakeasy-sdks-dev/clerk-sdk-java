@@ -6,7 +6,10 @@ package com.clerk.backend_api;
 
 import com.clerk.backend_api.models.components.DeletedObject;
 import com.clerk.backend_api.models.components.EmailAddress;
-import com.clerk.backend_api.models.errors.ClerkErrors;
+import com.clerk.backend_api.models.errors.ClerkErrors3;
+import com.clerk.backend_api.models.errors.ClerkErrors4;
+import com.clerk.backend_api.models.errors.ClerkErrors5;
+import com.clerk.backend_api.models.errors.ClerkErrors6;
 import com.clerk.backend_api.models.errors.SDKError;
 import com.clerk.backend_api.models.operations.CreateEmailAddressRequestBody;
 import com.clerk.backend_api.models.operations.CreateEmailAddressRequestBuilder;
@@ -174,9 +177,9 @@ public class EmailAddresses implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "400", "401", "403", "404", "422")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors3 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors3>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -312,9 +315,9 @@ public class EmailAddresses implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "400", "401", "403", "404")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors4 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors4>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -450,9 +453,9 @@ public class EmailAddresses implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "400", "401", "403", "404")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors5 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors5>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -613,9 +616,9 @@ public class EmailAddresses implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "400", "401", "403", "404")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors6 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors6>() {});
                 throw _out;
             } else {
                 throw new SDKError(

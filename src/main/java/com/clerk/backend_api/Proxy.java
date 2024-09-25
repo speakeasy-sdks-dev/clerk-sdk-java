@@ -5,7 +5,7 @@
 package com.clerk.backend_api;
 
 import com.clerk.backend_api.models.components.ProxyCheck;
-import com.clerk.backend_api.models.errors.ClerkErrors;
+import com.clerk.backend_api.models.errors.ClerkErrors74;
 import com.clerk.backend_api.models.errors.SDKError;
 import com.clerk.backend_api.models.operations.SDKMethodInterfaces.*;
 import com.clerk.backend_api.models.operations.VerifyDomainProxyRequestBody;
@@ -181,9 +181,9 @@ public class Proxy implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "400", "422")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors74 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors74>() {});
                 throw _out;
             } else {
                 throw new SDKError(

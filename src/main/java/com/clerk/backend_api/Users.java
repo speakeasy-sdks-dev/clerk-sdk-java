@@ -8,7 +8,18 @@ import com.clerk.backend_api.models.components.DeletedObject;
 import com.clerk.backend_api.models.components.OrganizationMemberships;
 import com.clerk.backend_api.models.components.TotalCount;
 import com.clerk.backend_api.models.components.User;
-import com.clerk.backend_api.models.errors.ClerkErrors;
+import com.clerk.backend_api.models.errors.ClerkErrors22;
+import com.clerk.backend_api.models.errors.ClerkErrors23;
+import com.clerk.backend_api.models.errors.ClerkErrors24;
+import com.clerk.backend_api.models.errors.ClerkErrors25;
+import com.clerk.backend_api.models.errors.ClerkErrors26;
+import com.clerk.backend_api.models.errors.ClerkErrors27;
+import com.clerk.backend_api.models.errors.ClerkErrors28;
+import com.clerk.backend_api.models.errors.ClerkErrors29;
+import com.clerk.backend_api.models.errors.ClerkErrors30;
+import com.clerk.backend_api.models.errors.ClerkErrors31;
+import com.clerk.backend_api.models.errors.ClerkErrors32;
+import com.clerk.backend_api.models.errors.ClerkErrors33;
 import com.clerk.backend_api.models.errors.SDKError;
 import com.clerk.backend_api.models.operations.BanUserRequest;
 import com.clerk.backend_api.models.operations.BanUserRequestBuilder;
@@ -232,9 +243,9 @@ public class Users implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "400", "401", "422")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors22 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors22>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -387,9 +398,9 @@ public class Users implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "400", "401", "403", "422")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors23 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors23>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -522,9 +533,9 @@ public class Users implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "422")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors24 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors24>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -660,9 +671,9 @@ public class Users implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "400", "401", "404")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors25 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors25>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -836,9 +847,9 @@ public class Users implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "400", "401", "404", "422")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors26 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors26>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -974,9 +985,9 @@ public class Users implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "400", "401", "404")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors27 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors27>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -1112,9 +1123,9 @@ public class Users implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "402")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors28 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors28>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -1250,9 +1261,9 @@ public class Users implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "402")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors29 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors29>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -1390,9 +1401,9 @@ public class Users implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "403")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors29 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors29>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -1528,9 +1539,9 @@ public class Users implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "403")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors29 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors29>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -1682,9 +1693,9 @@ public class Users implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "400", "401", "404")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors29 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors29>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -1820,9 +1831,9 @@ public class Users implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "404")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors30 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors30>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -2004,9 +2015,9 @@ public class Users implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "400", "401", "404", "422")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors31 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors31>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -2147,9 +2158,9 @@ public class Users implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "422")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors32 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors32>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -2339,9 +2350,9 @@ public class Users implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "403")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors33 _out = Utils.mapper().readValue(
                     new String(_fullResponse, StandardCharsets.UTF_8),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors33>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -2513,9 +2524,9 @@ public class Users implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "500")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors33 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors33>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -2685,9 +2696,9 @@ public class Users implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "500")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors33 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors33>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -2815,9 +2826,9 @@ public class Users implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "404", "500")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors33 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors33>() {});
                 throw _out;
             } else {
                 throw new SDKError(

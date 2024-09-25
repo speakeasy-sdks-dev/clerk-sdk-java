@@ -22,23 +22,23 @@ Only users in the same instance as the organization can be added as members.
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.ClerkErrors;
+import com.clerk.backend_api.models.errors.ClerkErrors69;
 import com.clerk.backend_api.models.operations.CreateOrganizationMembershipRequestBody;
 import com.clerk.backend_api.models.operations.CreateOrganizationMembershipResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws ClerkErrors, Exception {
+    public static void main(String[] args) throws ClerkErrors69, Exception {
 
         Clerk sdk = Clerk.builder()
                 .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
             .build();
 
         CreateOrganizationMembershipResponse res = sdk.organizationMemberships().create()
-                .organizationId("<value>")
+                .organizationId("<id>")
                 .requestBody(CreateOrganizationMembershipRequestBody.builder()
-                    .userId("<value>")
+                    .userId("<id>")
                     .role("<value>")
                     .build())
                 .call();
@@ -63,10 +63,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 400,403,404,422           | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
+| Error Object                | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors69 | 400,403,404,422             | application/json            |
+| models/errors/SDKError      | 4xx-5xx                     | \*\/*                       |
 
 
 ## list
@@ -79,19 +79,19 @@ Retrieves all user memberships for the given organization
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.ClerkErrors;
+import com.clerk.backend_api.models.errors.ClerkErrors70;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws ClerkErrors, Exception {
+    public static void main(String[] args) throws ClerkErrors70, Exception {
 
         Clerk sdk = Clerk.builder()
                 .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
             .build();
 
         sdk.organizationMemberships().list()
-                .organizationId("<value>")
+                .organizationId("<id>")
                 .limit(10L)
                 .offset(0L)
                 .orderBy("<value>")
@@ -119,10 +119,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 401,422                   | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
+| Error Object                | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors70 | 401,422                     | application/json            |
+| models/errors/SDKError      | 4xx-5xx                     | \*\/*                       |
 
 
 ## update
@@ -135,22 +135,22 @@ Updates the properties of an existing organization membership
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.ClerkErrors;
+import com.clerk.backend_api.models.errors.ClerkErrors71;
 import com.clerk.backend_api.models.operations.UpdateOrganizationMembershipRequestBody;
 import com.clerk.backend_api.models.operations.UpdateOrganizationMembershipResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws ClerkErrors, Exception {
+    public static void main(String[] args) throws ClerkErrors71, Exception {
 
         Clerk sdk = Clerk.builder()
                 .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
             .build();
 
         UpdateOrganizationMembershipResponse res = sdk.organizationMemberships().update()
-                .organizationId("<value>")
-                .userId("<value>")
+                .organizationId("<id>")
+                .userId("<id>")
                 .requestBody(UpdateOrganizationMembershipRequestBody.builder()
                     .role("<value>")
                     .build())
@@ -177,10 +177,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 400,404,422               | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
+| Error Object                | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors71 | 400,404,422                 | application/json            |
+| models/errors/SDKError      | 4xx-5xx                     | \*\/*                       |
 
 
 ## delete
@@ -193,21 +193,21 @@ Removes the given membership from the organization
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.ClerkErrors;
+import com.clerk.backend_api.models.errors.ClerkErrors72;
 import com.clerk.backend_api.models.operations.DeleteOrganizationMembershipResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws ClerkErrors, Exception {
+    public static void main(String[] args) throws ClerkErrors72, Exception {
 
         Clerk sdk = Clerk.builder()
                 .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
             .build();
 
         DeleteOrganizationMembershipResponse res = sdk.organizationMemberships().delete()
-                .organizationId("<value>")
-                .userId("<value>")
+                .organizationId("<id>")
+                .userId("<id>")
                 .call();
 
         if (res.organizationMembership().isPresent()) {
@@ -230,10 +230,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 400,401,404               | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
+| Error Object                | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors72 | 400,401,404                 | application/json            |
+| models/errors/SDKError      | 4xx-5xx                     | \*\/*                       |
 
 
 ## updateMetadata
@@ -248,22 +248,22 @@ You can remove metadata keys at any level by setting their value to `null`.
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.ClerkErrors;
+import com.clerk.backend_api.models.errors.ClerkErrors73;
 import com.clerk.backend_api.models.operations.UpdateOrganizationMembershipMetadataRequestBody;
 import com.clerk.backend_api.models.operations.UpdateOrganizationMembershipMetadataResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws ClerkErrors, Exception {
+    public static void main(String[] args) throws ClerkErrors73, Exception {
 
         Clerk sdk = Clerk.builder()
                 .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
             .build();
 
         UpdateOrganizationMembershipMetadataResponse res = sdk.organizationMemberships().updateMetadata()
-                .organizationId("<value>")
-                .userId("<value>")
+                .organizationId("<id>")
+                .userId("<id>")
                 .requestBody(UpdateOrganizationMembershipMetadataRequestBody.builder()
                     .build())
                 .call();
@@ -289,7 +289,7 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 400,404,422               | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
+| Error Object                | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors73 | 400,404,422                 | application/json            |
+| models/errors/SDKError      | 4xx-5xx                     | \*\/*                       |

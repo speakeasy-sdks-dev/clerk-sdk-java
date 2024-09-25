@@ -7,7 +7,12 @@ package com.clerk.backend_api;
 import com.clerk.backend_api.models.components.DeletedObject;
 import com.clerk.backend_api.models.components.OAuthApplication;
 import com.clerk.backend_api.models.components.OAuthApplicationWithSecret;
-import com.clerk.backend_api.models.errors.ClerkErrors;
+import com.clerk.backend_api.models.errors.ClerkErrors79;
+import com.clerk.backend_api.models.errors.ClerkErrors80;
+import com.clerk.backend_api.models.errors.ClerkErrors81;
+import com.clerk.backend_api.models.errors.ClerkErrors82;
+import com.clerk.backend_api.models.errors.ClerkErrors83;
+import com.clerk.backend_api.models.errors.ClerkErrors84;
 import com.clerk.backend_api.models.errors.SDKError;
 import com.clerk.backend_api.models.operations.CreateOAuthApplicationRequestBody;
 import com.clerk.backend_api.models.operations.CreateOAuthApplicationRequestBuilder;
@@ -231,9 +236,9 @@ public class OAuthApplications implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "400", "403", "422")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors79 _out = Utils.mapper().readValue(
                     new String(_fullResponse, StandardCharsets.UTF_8),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors79>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -387,9 +392,9 @@ public class OAuthApplications implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "400", "403", "422")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors80 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors80>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -525,9 +530,9 @@ public class OAuthApplications implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "403", "404")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors81 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors81>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -679,9 +684,9 @@ public class OAuthApplications implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "403", "404", "422")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors82 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors82>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -819,9 +824,9 @@ public class OAuthApplications implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "403", "404")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors83 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors83>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -959,9 +964,9 @@ public class OAuthApplications implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "403", "404")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors84 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors84>() {});
                 throw _out;
             } else {
                 throw new SDKError(
