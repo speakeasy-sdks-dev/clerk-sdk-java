@@ -22,20 +22,20 @@ Only users in the same instance as the organization can be added as members.
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors;
 import com.clerk.backend_api.models.operations.CreateOrganizationMembershipRequestBody;
 import com.clerk.backend_api.models.operations.CreateOrganizationMembershipResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors, Exception {
 
-            CreateOrganizationMembershipResponse res = sdk.organizationMemberships().create()
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        CreateOrganizationMembershipResponse res = sdk.organizationMemberships().create()
                 .organizationId("<value>")
                 .requestBody(CreateOrganizationMembershipRequestBody.builder()
                     .userId("<value>")
@@ -43,20 +43,9 @@ public class Application {
                     .build())
                 .call();
 
-            if (res.organizationMembership().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.organizationMembership().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -90,33 +79,26 @@ Retrieves all user memberships for the given organization
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
+import com.clerk.backend_api.models.errors.ClerkErrors;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors, Exception {
 
-            sdk.organizationMemberships().list()
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        sdk.organizationMemberships().list()
                 .organizationId("<value>")
                 .limit(10L)
                 .offset(0L)
                 .orderBy("<value>")
                 .callAsStreamUnwrapped()
-                .forEach(item -> {
-                   // handle item
-                });
-
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
-        }
+            .forEach(item -> {
+               // handle item
+            });
 
     }
 }
@@ -153,20 +135,20 @@ Updates the properties of an existing organization membership
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors;
 import com.clerk.backend_api.models.operations.UpdateOrganizationMembershipRequestBody;
 import com.clerk.backend_api.models.operations.UpdateOrganizationMembershipResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors, Exception {
 
-            UpdateOrganizationMembershipResponse res = sdk.organizationMemberships().update()
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        UpdateOrganizationMembershipResponse res = sdk.organizationMemberships().update()
                 .organizationId("<value>")
                 .userId("<value>")
                 .requestBody(UpdateOrganizationMembershipRequestBody.builder()
@@ -174,20 +156,9 @@ public class Application {
                     .build())
                 .call();
 
-            if (res.organizationMembership().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.organizationMembership().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -222,37 +193,26 @@ Removes the given membership from the organization
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors;
 import com.clerk.backend_api.models.operations.DeleteOrganizationMembershipResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors, Exception {
 
-            DeleteOrganizationMembershipResponse res = sdk.organizationMemberships().delete()
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        DeleteOrganizationMembershipResponse res = sdk.organizationMemberships().delete()
                 .organizationId("<value>")
                 .userId("<value>")
                 .call();
 
-            if (res.organizationMembership().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.organizationMembership().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -288,40 +248,29 @@ You can remove metadata keys at any level by setting their value to `null`.
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors;
 import com.clerk.backend_api.models.operations.UpdateOrganizationMembershipMetadataRequestBody;
 import com.clerk.backend_api.models.operations.UpdateOrganizationMembershipMetadataResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors, Exception {
 
-            UpdateOrganizationMembershipMetadataResponse res = sdk.organizationMemberships().updateMetadata()
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        UpdateOrganizationMembershipMetadataResponse res = sdk.organizationMemberships().updateMetadata()
                 .organizationId("<value>")
                 .userId("<value>")
                 .requestBody(UpdateOrganizationMembershipMetadataRequestBody.builder()
                     .build())
                 .call();
 
-            if (res.organizationMembership().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.organizationMembership().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
