@@ -37,42 +37,31 @@ When the organization invitation is accepted, the metadata will be transferred t
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors;
 import com.clerk.backend_api.models.operations.CreateOrganizationInvitationRequestBody;
 import com.clerk.backend_api.models.operations.CreateOrganizationInvitationResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors, Exception {
 
-            CreateOrganizationInvitationResponse res = sdk.organizationInvitations().create()
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        CreateOrganizationInvitationResponse res = sdk.organizationInvitations().create()
                 .organizationId("<value>")
                 .requestBody(CreateOrganizationInvitationRequestBody.builder()
-                    .emailAddress("<value>")
+                    .emailAddress("Loyal79@yahoo.com")
                     .inviterUserId("<value>")
                     .role("<value>")
                     .build())
                 .call();
 
-            if (res.organizationInvitation().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.organizationInvitation().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -111,34 +100,27 @@ Any invitations created as a result of an Organization Domain are not included i
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
+import com.clerk.backend_api.models.errors.ClerkErrors;
 import com.clerk.backend_api.models.operations.ListOrganizationInvitationsQueryParamStatus;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors, Exception {
 
-            sdk.organizationInvitations().list()
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        sdk.organizationInvitations().list()
                 .organizationId("<value>")
                 .limit(10L)
                 .offset(0L)
                 .status(ListOrganizationInvitationsQueryParamStatus.REVOKED)
                 .callAsStreamUnwrapped()
-                .forEach(item -> {
-                   // handle item
-                });
-
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
-        }
+            .forEach(item -> {
+               // handle item
+            });
 
     }
 }
@@ -187,7 +169,7 @@ When the organization invitation is accepted, the metadata will be transferred t
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors;
 import com.clerk.backend_api.models.operations.CreateOrganizationInvitationBulkResponse;
 import com.clerk.backend_api.models.operations.RequestBody;
 import java.lang.Exception;
@@ -195,36 +177,25 @@ import java.util.List;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors, Exception {
 
-            CreateOrganizationInvitationBulkResponse res = sdk.organizationInvitations().createBulk()
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        CreateOrganizationInvitationBulkResponse res = sdk.organizationInvitations().createBulk()
                 .organizationId("<value>")
                 .requestBody(List.of(
                     RequestBody.builder()
-                        .emailAddress("<value>")
+                        .emailAddress("Suzanne.Mills71@yahoo.com")
                         .inviterUserId("<value>")
                         .role("<value>")
                         .build()))
                 .call();
 
-            if (res.organizationInvitations().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.organizationInvitations().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -265,32 +236,25 @@ Any invitations created as a result of an Organization Domain are not included i
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
+import com.clerk.backend_api.models.errors.ClerkErrors;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors, Exception {
 
-            sdk.organizationInvitations().listPending()
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        sdk.organizationInvitations().listPending()
                 .organizationId("<value>")
                 .limit(10L)
                 .offset(0L)
                 .callAsStreamUnwrapped()
-                .forEach(item -> {
-                   // handle item
-                });
-
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
-        }
+            .forEach(item -> {
+               // handle item
+            });
 
     }
 }
@@ -326,37 +290,26 @@ Use this request to get an existing organization invitation by ID.
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors;
 import com.clerk.backend_api.models.operations.GetOrganizationInvitationResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors, Exception {
 
-            GetOrganizationInvitationResponse res = sdk.organizationInvitations().get()
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        GetOrganizationInvitationResponse res = sdk.organizationInvitations().get()
                 .organizationId("<value>")
                 .invitationId("<value>")
                 .call();
 
-            if (res.organizationInvitation().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.organizationInvitation().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -394,20 +347,20 @@ Only users with "admin" role can revoke invitations.
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors;
 import com.clerk.backend_api.models.operations.RevokeOrganizationInvitationRequestBody;
 import com.clerk.backend_api.models.operations.RevokeOrganizationInvitationResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors, Exception {
 
-            RevokeOrganizationInvitationResponse res = sdk.organizationInvitations().revoke()
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        RevokeOrganizationInvitationResponse res = sdk.organizationInvitations().revoke()
                 .organizationId("<value>")
                 .invitationId("<value>")
                 .requestBody(RevokeOrganizationInvitationRequestBody.builder()
@@ -415,20 +368,9 @@ public class Application {
                     .build())
                 .call();
 
-            if (res.organizationInvitation().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.organizationInvitation().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
