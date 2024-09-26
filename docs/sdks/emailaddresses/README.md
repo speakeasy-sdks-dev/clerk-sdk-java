@@ -20,40 +20,29 @@ Create a new email address
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors3;
 import com.clerk.backend_api.models.operations.CreateEmailAddressRequestBody;
 import com.clerk.backend_api.models.operations.CreateEmailAddressResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
+    public static void main(String[] args) throws ClerkErrors3, Exception {
+
+        Clerk sdk = Clerk.builder()
                 .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        CreateEmailAddressRequestBody req = CreateEmailAddressRequestBody.builder()
                 .build();
 
-            CreateEmailAddressRequestBody req = CreateEmailAddressRequestBody.builder()
-                .build();
-
-            CreateEmailAddressResponse res = sdk.emailAddresses().create()
+        CreateEmailAddressResponse res = sdk.emailAddresses().create()
                 .request(req)
                 .call();
 
-            if (res.emailAddress().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.emailAddress().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -70,10 +59,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 400,401,403,404,422       | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
+| Error Object               | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| models/errors/ClerkErrors3 | 400,401,403,404,422        | application/json           |
+| models/errors/SDKError     | 4xx-5xx                    | \*\/*                      |
 
 
 ## get
@@ -86,36 +75,25 @@ Returns the details of an email address.
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors4;
 import com.clerk.backend_api.models.operations.GetEmailAddressResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors4, Exception {
 
-            GetEmailAddressResponse res = sdk.emailAddresses().get()
-                .emailAddressId("<value>")
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        GetEmailAddressResponse res = sdk.emailAddresses().get()
+                .emailAddressId("<id>")
                 .call();
 
-            if (res.emailAddress().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.emailAddress().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -132,10 +110,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 400,401,403,404           | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
+| Error Object               | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| models/errors/ClerkErrors4 | 400,401,403,404            | application/json           |
+| models/errors/SDKError     | 4xx-5xx                    | \*\/*                      |
 
 
 ## delete
@@ -148,36 +126,25 @@ Delete the email address with the given ID
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors5;
 import com.clerk.backend_api.models.operations.DeleteEmailAddressResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors5, Exception {
 
-            DeleteEmailAddressResponse res = sdk.emailAddresses().delete()
-                .emailAddressId("<value>")
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        DeleteEmailAddressResponse res = sdk.emailAddresses().delete()
+                .emailAddressId("<id>")
                 .call();
 
-            if (res.deletedObject().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.deletedObject().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -194,10 +161,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 400,401,403,404           | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
+| Error Object               | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| models/errors/ClerkErrors5 | 400,401,403,404            | application/json           |
+| models/errors/SDKError     | 4xx-5xx                    | \*\/*                      |
 
 
 ## update
@@ -210,39 +177,28 @@ Updates an email address.
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors6;
 import com.clerk.backend_api.models.operations.UpdateEmailAddressRequestBody;
 import com.clerk.backend_api.models.operations.UpdateEmailAddressResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors6, Exception {
 
-            UpdateEmailAddressResponse res = sdk.emailAddresses().update()
-                .emailAddressId("<value>")
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        UpdateEmailAddressResponse res = sdk.emailAddresses().update()
+                .emailAddressId("<id>")
                 .requestBody(UpdateEmailAddressRequestBody.builder()
                     .build())
                 .call();
 
-            if (res.emailAddress().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.emailAddress().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -260,7 +216,7 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 400,401,403,404           | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
+| Error Object               | Status Code                | Content Type               |
+| -------------------------- | -------------------------- | -------------------------- |
+| models/errors/ClerkErrors6 | 400,401,403,404            | application/json           |
+| models/errors/SDKError     | 4xx-5xx                    | \*\/*                      |
