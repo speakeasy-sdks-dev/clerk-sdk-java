@@ -23,37 +23,26 @@ The templates are returned sorted by position.
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors16;
 import com.clerk.backend_api.models.operations.GetTemplateListResponse;
 import com.clerk.backend_api.models.operations.TemplateType;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors16, Exception {
 
-            GetTemplateListResponse res = sdk.templates().list()
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        GetTemplateListResponse res = sdk.templates().list()
                 .templateType(TemplateType.SMS)
                 .call();
 
-            if (res.templateList().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.templateList().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -70,10 +59,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 400,401,422               | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
+| Error Object                | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors16 | 400,401,422                 | application/json            |
+| models/errors/SDKError      | 4xx-5xx                     | \*\/*                       |
 
 
 ## get
@@ -86,38 +75,27 @@ Returns the details of a template
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors17;
 import com.clerk.backend_api.models.operations.GetTemplateResponse;
 import com.clerk.backend_api.models.operations.PathParamTemplateType;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors17, Exception {
 
-            GetTemplateResponse res = sdk.templates().get()
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        GetTemplateResponse res = sdk.templates().get()
                 .templateType(PathParamTemplateType.SMS)
                 .slug("<value>")
                 .call();
 
-            if (res.template().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.template().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -135,10 +113,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 400,401,404               | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
+| Error Object                | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors17 | 400,401,404                 | application/json            |
+| models/errors/SDKError      | 4xx-5xx                     | \*\/*                       |
 
 
 ## upsert
@@ -151,7 +129,7 @@ Updates the existing template of the given type and slug
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors18;
 import com.clerk.backend_api.models.operations.UpsertTemplatePathParamTemplateType;
 import com.clerk.backend_api.models.operations.UpsertTemplateRequestBody;
 import com.clerk.backend_api.models.operations.UpsertTemplateResponse;
@@ -159,33 +137,22 @@ import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors18, Exception {
 
-            UpsertTemplateResponse res = sdk.templates().upsert()
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        UpsertTemplateResponse res = sdk.templates().upsert()
                 .templateType(UpsertTemplatePathParamTemplateType.SMS)
                 .slug("<value>")
                 .requestBody(UpsertTemplateRequestBody.builder()
                     .build())
                 .call();
 
-            if (res.template().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.template().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -204,10 +171,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 400,401,402,403,404,422   | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
+| Error Object                | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors18 | 400,401,402,403,404,422     | application/json            |
+| models/errors/SDKError      | 4xx-5xx                     | \*\/*                       |
 
 
 ## revert
@@ -220,38 +187,27 @@ Reverts an updated template to its default state
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors19;
 import com.clerk.backend_api.models.operations.RevertTemplatePathParamTemplateType;
 import com.clerk.backend_api.models.operations.RevertTemplateResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors19, Exception {
 
-            RevertTemplateResponse res = sdk.templates().revert()
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        RevertTemplateResponse res = sdk.templates().revert()
                 .templateType(RevertTemplatePathParamTemplateType.EMAIL)
                 .slug("<value>")
                 .call();
 
-            if (res.template().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.template().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -269,10 +225,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 400,401,402,404           | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
+| Error Object                | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors19 | 400,401,402,404             | application/json            |
+| models/errors/SDKError      | 4xx-5xx                     | \*\/*                       |
 
 
 ## preview
@@ -285,40 +241,29 @@ Returns a preview of a template for a given template_type, slug and body
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors20;
 import com.clerk.backend_api.models.operations.PreviewTemplateRequestBody;
 import com.clerk.backend_api.models.operations.PreviewTemplateResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors20, Exception {
 
-            PreviewTemplateResponse res = sdk.templates().preview()
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        PreviewTemplateResponse res = sdk.templates().preview()
                 .templateType("<value>")
                 .slug("<value>")
                 .requestBody(PreviewTemplateRequestBody.builder()
                     .build())
                 .call();
 
-            if (res.object().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.object().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -337,10 +282,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 400,401,404,422           | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
+| Error Object                | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors20 | 400,401,404,422             | application/json            |
+| models/errors/SDKError      | 4xx-5xx                     | \*\/*                       |
 
 
 ## toggleDelivery
@@ -355,7 +300,7 @@ The app developer will need to listen to the `email.created` or `sms.created` we
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors21;
 import com.clerk.backend_api.models.operations.ToggleTemplateDeliveryPathParamTemplateType;
 import com.clerk.backend_api.models.operations.ToggleTemplateDeliveryRequestBody;
 import com.clerk.backend_api.models.operations.ToggleTemplateDeliveryResponse;
@@ -363,33 +308,22 @@ import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors21, Exception {
 
-            ToggleTemplateDeliveryResponse res = sdk.templates().toggleDelivery()
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        ToggleTemplateDeliveryResponse res = sdk.templates().toggleDelivery()
                 .templateType(ToggleTemplateDeliveryPathParamTemplateType.EMAIL)
                 .slug("<value>")
                 .requestBody(ToggleTemplateDeliveryRequestBody.builder()
                     .build())
                 .call();
 
-            if (res.template().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.template().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -408,7 +342,7 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 400,401,404               | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
+| Error Object                | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors21 | 400,401,404                 | application/json            |
+| models/errors/SDKError      | 4xx-5xx                     | \*\/*                       |
