@@ -6,7 +6,9 @@ package com.clerk.backend_api;
 
 import com.clerk.backend_api.models.components.AllowlistIdentifier;
 import com.clerk.backend_api.models.components.DeletedObject;
-import com.clerk.backend_api.models.errors.ClerkErrors;
+import com.clerk.backend_api.models.errors.ClerkErrors36;
+import com.clerk.backend_api.models.errors.ClerkErrors37;
+import com.clerk.backend_api.models.errors.ClerkErrors38;
 import com.clerk.backend_api.models.errors.SDKError;
 import com.clerk.backend_api.models.operations.CreateAllowlistIdentifierRequestBody;
 import com.clerk.backend_api.models.operations.CreateAllowlistIdentifierRequestBuilder;
@@ -71,7 +73,7 @@ public class Allowlist implements
         HTTPRequest _req = new HTTPRequest(_url, "GET");
         _req.addHeader("Accept", "application/json")
             .addHeader("user-agent", 
-                this.sdkConfiguration.userAgent);
+                SDKConfiguration.USER_AGENT);
 
         Utils.configureSecurity(_req,  
                 this.sdkConfiguration.securitySource.getSecurity());
@@ -146,9 +148,9 @@ public class Allowlist implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "401", "402")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors36 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors36>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -221,7 +223,7 @@ public class Allowlist implements
         _req.setBody(Optional.ofNullable(_serializedRequestBody));
         _req.addHeader("Accept", "application/json")
             .addHeader("user-agent", 
-                this.sdkConfiguration.userAgent);
+                SDKConfiguration.USER_AGENT);
 
         Utils.configureSecurity(_req,  
                 this.sdkConfiguration.securitySource.getSecurity());
@@ -296,9 +298,9 @@ public class Allowlist implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "400", "402", "422")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors37 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors37>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -359,7 +361,7 @@ public class Allowlist implements
         HTTPRequest _req = new HTTPRequest(_url, "DELETE");
         _req.addHeader("Accept", "application/json")
             .addHeader("user-agent", 
-                this.sdkConfiguration.userAgent);
+                SDKConfiguration.USER_AGENT);
 
         Utils.configureSecurity(_req,  
                 this.sdkConfiguration.securitySource.getSecurity());
@@ -434,9 +436,9 @@ public class Allowlist implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "402", "404")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors38 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors38>() {});
                 throw _out;
             } else {
                 throw new SDKError(
