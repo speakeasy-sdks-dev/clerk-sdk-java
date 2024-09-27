@@ -66,11 +66,10 @@ public class Application {
 
 ### Errors
 
-| Error Object                | Status Code                 | Content Type                |
+| Error Type                  | Status Code                 | Content Type                |
 | --------------------------- | --------------------------- | --------------------------- |
-| models/errors/ClerkErrors57 | 400,403,422                 | application/json            |
-| models/errors/SDKError      | 4xx-5xx                     | \*\/*                       |
-
+| models/errors/ClerkErrors57 | 400, 403, 422               | application/json            |
+| models/errors/SDKError      | 4XX, 5XX                    | \*/\*                       |
 
 ## create
 
@@ -131,11 +130,10 @@ public class Application {
 
 ### Errors
 
-| Error Object                | Status Code                 | Content Type                |
+| Error Type                  | Status Code                 | Content Type                |
 | --------------------------- | --------------------------- | --------------------------- |
-| models/errors/ClerkErrors58 | 400,403,422                 | application/json            |
-| models/errors/SDKError      | 4xx-5xx                     | \*\/*                       |
-
+| models/errors/ClerkErrors58 | 400, 403, 422               | application/json            |
+| models/errors/SDKError      | 4XX, 5XX                    | \*/\*                       |
 
 ## get
 
@@ -182,11 +180,10 @@ public class Application {
 
 ### Errors
 
-| Error Object                | Status Code                 | Content Type                |
+| Error Type                  | Status Code                 | Content Type                |
 | --------------------------- | --------------------------- | --------------------------- |
-| models/errors/ClerkErrors59 | 403,404                     | application/json            |
-| models/errors/SDKError      | 4xx-5xx                     | \*\/*                       |
-
+| models/errors/ClerkErrors59 | 403, 404                    | application/json            |
+| models/errors/SDKError      | 4XX, 5XX                    | \*/\*                       |
 
 ## update
 
@@ -237,11 +234,10 @@ public class Application {
 
 ### Errors
 
-| Error Object                | Status Code                 | Content Type                |
+| Error Type                  | Status Code                 | Content Type                |
 | --------------------------- | --------------------------- | --------------------------- |
-| models/errors/ClerkErrors60 | 402,404,422                 | application/json            |
-| models/errors/SDKError      | 4xx-5xx                     | \*\/*                       |
-
+| models/errors/ClerkErrors60 | 402, 404, 422               | application/json            |
+| models/errors/SDKError      | 4XX, 5XX                    | \*/\*                       |
 
 ## delete
 
@@ -290,11 +286,10 @@ public class Application {
 
 ### Errors
 
-| Error Object                | Status Code                 | Content Type                |
+| Error Type                  | Status Code                 | Content Type                |
 | --------------------------- | --------------------------- | --------------------------- |
 | models/errors/ClerkErrors61 | 404                         | application/json            |
-| models/errors/SDKError      | 4xx-5xx                     | \*\/*                       |
-
+| models/errors/SDKError      | 4XX, 5XX                    | \*/\*                       |
 
 ## mergeMetadata
 
@@ -348,11 +343,10 @@ public class Application {
 
 ### Errors
 
-| Error Object                | Status Code                 | Content Type                |
+| Error Type                  | Status Code                 | Content Type                |
 | --------------------------- | --------------------------- | --------------------------- |
-| models/errors/ClerkErrors61 | 400,401,404,422             | application/json            |
-| models/errors/SDKError      | 4xx-5xx                     | \*\/*                       |
-
+| models/errors/ClerkErrors61 | 400, 401, 404, 422          | application/json            |
+| models/errors/SDKError      | 4XX, 5XX                    | \*/\*                       |
 
 ## uploadLogo
 
@@ -413,11 +407,10 @@ public class Application {
 
 ### Errors
 
-| Error Object                | Status Code                 | Content Type                |
+| Error Type                  | Status Code                 | Content Type                |
 | --------------------------- | --------------------------- | --------------------------- |
-| models/errors/ClerkErrors62 | 400,403,404,413             | application/json            |
-| models/errors/SDKError      | 4xx-5xx                     | \*\/*                       |
-
+| models/errors/ClerkErrors62 | 400, 403, 404, 413          | application/json            |
+| models/errors/SDKError      | 4XX, 5XX                    | \*/\*                       |
 
 ## deleteLogo
 
@@ -464,7 +457,7 @@ public class Application {
 
 ### Errors
 
-| Error Object                | Status Code                 | Content Type                |
+| Error Type                  | Status Code                 | Content Type                |
 | --------------------------- | --------------------------- | --------------------------- |
 | models/errors/ClerkErrors63 | 404                         | application/json            |
-| models/errors/SDKError      | 4xx-5xx                     | \*\/*                       |
+| models/errors/SDKError      | 4XX, 5XX                    | \*/\*                       |

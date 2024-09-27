@@ -385,12 +385,14 @@ public class Application {
 <!-- Start Error Handling [errors] -->
 ## Error Handling
 
-Handling errors in this SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will throw the appropriate Exception type.
+Handling errors in this SDK should largely match your expectations. All operations return a response object or raise an exception.
 
-| Error Object               | Status Code                | Content Type               |
+By default, an API error will throw a `models/errors/SDKError` exception. When custom error responses are specified for an operation, the SDK may also throw their associated exception. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `verify` method throws the following exceptions:
+
+| Error Type                 | Status Code                | Content Type               |
 | -------------------------- | -------------------------- | -------------------------- |
-| models/errors/ClerkErrors1 | 400,401,404                | application/json           |
-| models/errors/SDKError     | 4xx-5xx                    | \*\/*                      |
+| models/errors/ClerkErrors1 | 400, 401, 404              | application/json           |
+| models/errors/SDKError     | 4XX, 5XX                   | \*/\*                      |
 
 ### Example
 

@@ -59,11 +59,10 @@ public class Application {
 
 ### Errors
 
-| Error Object               | Status Code                | Content Type               |
+| Error Type                 | Status Code                | Content Type               |
 | -------------------------- | -------------------------- | -------------------------- |
-| models/errors/ClerkErrors3 | 400,401,403,404,422        | application/json           |
-| models/errors/SDKError     | 4xx-5xx                    | \*\/*                      |
-
+| models/errors/ClerkErrors3 | 400, 401, 403, 404, 422    | application/json           |
+| models/errors/SDKError     | 4XX, 5XX                   | \*/\*                      |
 
 ## get
 
@@ -110,11 +109,10 @@ public class Application {
 
 ### Errors
 
-| Error Object               | Status Code                | Content Type               |
+| Error Type                 | Status Code                | Content Type               |
 | -------------------------- | -------------------------- | -------------------------- |
-| models/errors/ClerkErrors4 | 400,401,403,404            | application/json           |
-| models/errors/SDKError     | 4xx-5xx                    | \*\/*                      |
-
+| models/errors/ClerkErrors4 | 400, 401, 403, 404         | application/json           |
+| models/errors/SDKError     | 4XX, 5XX                   | \*/\*                      |
 
 ## delete
 
@@ -161,11 +159,10 @@ public class Application {
 
 ### Errors
 
-| Error Object               | Status Code                | Content Type               |
+| Error Type                 | Status Code                | Content Type               |
 | -------------------------- | -------------------------- | -------------------------- |
-| models/errors/ClerkErrors5 | 400,401,403,404            | application/json           |
-| models/errors/SDKError     | 4xx-5xx                    | \*\/*                      |
-
+| models/errors/ClerkErrors5 | 400, 401, 403, 404         | application/json           |
+| models/errors/SDKError     | 4XX, 5XX                   | \*/\*                      |
 
 ## update
 
@@ -216,7 +213,7 @@ public class Application {
 
 ### Errors
 
-| Error Object               | Status Code                | Content Type               |
+| Error Type                 | Status Code                | Content Type               |
 | -------------------------- | -------------------------- | -------------------------- |
-| models/errors/ClerkErrors6 | 400,401,403,404            | application/json           |
-| models/errors/SDKError     | 4xx-5xx                    | \*\/*                      |
+| models/errors/ClerkErrors6 | 400, 401, 403, 404         | application/json           |
+| models/errors/SDKError     | 4XX, 5XX                   | \*/\*                      |

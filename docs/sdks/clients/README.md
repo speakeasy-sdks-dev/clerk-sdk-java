@@ -59,11 +59,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
+| Error Type                | Status Code               | Content Type              |
 | ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 400,401,410,422           | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
-
+| models/errors/ClerkErrors | 400, 401, 410, 422        | application/json          |
+| models/errors/SDKError    | 4XX, 5XX                  | \*/\*                     |
 
 ## verify
 
@@ -114,11 +113,10 @@ public class Application {
 
 ### Errors
 
-| Error Object               | Status Code                | Content Type               |
+| Error Type                 | Status Code                | Content Type               |
 | -------------------------- | -------------------------- | -------------------------- |
-| models/errors/ClerkErrors1 | 400,401,404                | application/json           |
-| models/errors/SDKError     | 4xx-5xx                    | \*\/*                      |
-
+| models/errors/ClerkErrors1 | 400, 401, 404              | application/json           |
+| models/errors/SDKError     | 4XX, 5XX                   | \*/\*                      |
 
 ## get
 
@@ -165,7 +163,7 @@ public class Application {
 
 ### Errors
 
-| Error Object               | Status Code                | Content Type               |
+| Error Type                 | Status Code                | Content Type               |
 | -------------------------- | -------------------------- | -------------------------- |
-| models/errors/ClerkErrors2 | 400,401,404                | application/json           |
-| models/errors/SDKError     | 4xx-5xx                    | \*\/*                      |
+| models/errors/ClerkErrors2 | 400, 401, 404              | application/json           |
+| models/errors/SDKError     | 4XX, 5XX                   | \*/\*                      |
