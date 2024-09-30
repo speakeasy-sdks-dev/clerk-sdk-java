@@ -7,7 +7,9 @@ package com.clerk.backend_api;
 import com.clerk.backend_api.models.components.BlocklistIdentifier;
 import com.clerk.backend_api.models.components.BlocklistIdentifiers;
 import com.clerk.backend_api.models.components.DeletedObject;
-import com.clerk.backend_api.models.errors.ClerkErrors;
+import com.clerk.backend_api.models.errors.ClerkErrors39;
+import com.clerk.backend_api.models.errors.ClerkErrors40;
+import com.clerk.backend_api.models.errors.ClerkErrors41;
 import com.clerk.backend_api.models.errors.SDKError;
 import com.clerk.backend_api.models.operations.CreateBlocklistIdentifierRequestBody;
 import com.clerk.backend_api.models.operations.CreateBlocklistIdentifierRequestBuilder;
@@ -72,7 +74,7 @@ public class Blocklist implements
         HTTPRequest _req = new HTTPRequest(_url, "GET");
         _req.addHeader("Accept", "application/json")
             .addHeader("user-agent", 
-                this.sdkConfiguration.userAgent);
+                SDKConfiguration.USER_AGENT);
 
         Utils.configureSecurity(_req,  
                 this.sdkConfiguration.securitySource.getSecurity());
@@ -147,9 +149,9 @@ public class Blocklist implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "401", "402")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors39 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors39>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -222,7 +224,7 @@ public class Blocklist implements
         _req.setBody(Optional.ofNullable(_serializedRequestBody));
         _req.addHeader("Accept", "application/json")
             .addHeader("user-agent", 
-                this.sdkConfiguration.userAgent);
+                SDKConfiguration.USER_AGENT);
 
         Utils.configureSecurity(_req,  
                 this.sdkConfiguration.securitySource.getSecurity());
@@ -297,9 +299,9 @@ public class Blocklist implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "400", "402", "422")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors40 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors40>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -360,7 +362,7 @@ public class Blocklist implements
         HTTPRequest _req = new HTTPRequest(_url, "DELETE");
         _req.addHeader("Accept", "application/json")
             .addHeader("user-agent", 
-                this.sdkConfiguration.userAgent);
+                SDKConfiguration.USER_AGENT);
 
         Utils.configureSecurity(_req,  
                 this.sdkConfiguration.securitySource.getSecurity());
@@ -435,9 +437,9 @@ public class Blocklist implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "402", "404")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors41 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors41>() {});
                 throw _out;
             } else {
                 throw new SDKError(
