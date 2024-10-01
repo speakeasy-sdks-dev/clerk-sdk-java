@@ -35,41 +35,30 @@ The users are returned sorted by creation date, with the newest users appearing 
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors22;
 import com.clerk.backend_api.models.operations.GetUserListRequest;
 import com.clerk.backend_api.models.operations.GetUserListResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors22, Exception {
 
-            GetUserListRequest req = GetUserListRequest.builder()
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        GetUserListRequest req = GetUserListRequest.builder()
                 .lastActiveAtSince(1700690400000L)
                 .build();
 
-            GetUserListResponse res = sdk.users().list()
+        GetUserListResponse res = sdk.users().list()
                 .request(req)
                 .call();
 
-            if (res.userList().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.userList().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -86,11 +75,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 400,401,422               | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
-
+| Error Type                  | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors22 | 400, 401, 422               | application/json            |
+| models/errors/SDKError      | 4XX, 5XX                    | \*/\*                       |
 
 ## create
 
@@ -108,40 +96,29 @@ A rate limit rule of 20 requests per 10 seconds is applied to this endpoint.
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors23;
 import com.clerk.backend_api.models.operations.CreateUserRequestBody;
 import com.clerk.backend_api.models.operations.CreateUserResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
+    public static void main(String[] args) throws ClerkErrors23, Exception {
+
+        Clerk sdk = Clerk.builder()
                 .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        CreateUserRequestBody req = CreateUserRequestBody.builder()
                 .build();
 
-            CreateUserRequestBody req = CreateUserRequestBody.builder()
-                .build();
-
-            CreateUserResponse res = sdk.users().create()
+        CreateUserResponse res = sdk.users().create()
                 .request(req)
                 .call();
 
-            if (res.user().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.user().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -158,11 +135,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 400,401,403,422           | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
-
+| Error Type                  | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors23 | 400, 401, 403, 422          | application/json            |
+| models/errors/SDKError      | 4XX, 5XX                    | \*/\*                       |
 
 ## count
 
@@ -174,40 +150,29 @@ Returns a total count of all users that match the given filtering criteria.
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors24;
 import com.clerk.backend_api.models.operations.GetUsersCountRequest;
 import com.clerk.backend_api.models.operations.GetUsersCountResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
+    public static void main(String[] args) throws ClerkErrors24, Exception {
+
+        Clerk sdk = Clerk.builder()
                 .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        GetUsersCountRequest req = GetUsersCountRequest.builder()
                 .build();
 
-            GetUsersCountRequest req = GetUsersCountRequest.builder()
-                .build();
-
-            GetUsersCountResponse res = sdk.users().count()
+        GetUsersCountResponse res = sdk.users().count()
                 .request(req)
                 .call();
 
-            if (res.totalCount().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.totalCount().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -224,11 +189,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 422                       | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
-
+| Error Type                  | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors24 | 422                         | application/json            |
+| models/errors/SDKError      | 4XX, 5XX                    | \*/\*                       |
 
 ## get
 
@@ -240,36 +204,25 @@ Retrieve the details of a user
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors25;
 import com.clerk.backend_api.models.operations.GetUserResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors25, Exception {
 
-            GetUserResponse res = sdk.users().get()
-                .userId("<value>")
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        GetUserResponse res = sdk.users().get()
+                .userId("<id>")
                 .call();
 
-            if (res.user().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.user().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -286,11 +239,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 400,401,404               | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
-
+| Error Type                  | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors25 | 400, 401, 404               | application/json            |
+| models/errors/SDKError      | 4XX, 5XX                    | \*/\*                       |
 
 ## update
 
@@ -313,39 +265,28 @@ You can also choose to sign the user out of all their active sessions on any dev
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors26;
 import com.clerk.backend_api.models.operations.UpdateUserRequestBody;
 import com.clerk.backend_api.models.operations.UpdateUserResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors26, Exception {
 
-            UpdateUserResponse res = sdk.users().update()
-                .userId("<value>")
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        UpdateUserResponse res = sdk.users().update()
+                .userId("<id>")
                 .requestBody(UpdateUserRequestBody.builder()
                     .build())
                 .call();
 
-            if (res.user().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.user().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -363,11 +304,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 400,401,404,422           | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
-
+| Error Type                  | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors26 | 400, 401, 404, 422          | application/json            |
+| models/errors/SDKError      | 4XX, 5XX                    | \*/\*                       |
 
 ## delete
 
@@ -379,36 +319,25 @@ Delete the specified user
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors27;
 import com.clerk.backend_api.models.operations.DeleteUserResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors27, Exception {
 
-            DeleteUserResponse res = sdk.users().delete()
-                .userId("<value>")
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        DeleteUserResponse res = sdk.users().delete()
+                .userId("<id>")
                 .call();
 
-            if (res.deletedObject().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.deletedObject().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -425,11 +354,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 400,401,404               | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
-
+| Error Type                  | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors27 | 400, 401, 404               | application/json            |
+| models/errors/SDKError      | 4XX, 5XX                    | \*/\*                       |
 
 ## ban
 
@@ -441,36 +369,25 @@ Marks the given user as banned, which means that all their sessions are revoked 
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors28;
 import com.clerk.backend_api.models.operations.BanUserResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors28, Exception {
 
-            BanUserResponse res = sdk.users().ban()
-                .userId("<value>")
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        BanUserResponse res = sdk.users().ban()
+                .userId("<id>")
                 .call();
 
-            if (res.user().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.user().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -487,11 +404,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 402                       | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
-
+| Error Type                  | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors28 | 402                         | application/json            |
+| models/errors/SDKError      | 4XX, 5XX                    | \*/\*                       |
 
 ## unban
 
@@ -503,36 +419,25 @@ Removes the ban mark from the given user.
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors29;
 import com.clerk.backend_api.models.operations.UnbanUserResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors29, Exception {
 
-            UnbanUserResponse res = sdk.users().unban()
-                .userId("<value>")
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        UnbanUserResponse res = sdk.users().unban()
+                .userId("<id>")
                 .call();
 
-            if (res.user().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.user().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -549,11 +454,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 402                       | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
-
+| Error Type                  | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors29 | 402                         | application/json            |
+| models/errors/SDKError      | 4XX, 5XX                    | \*/\*                       |
 
 ## lock
 
@@ -566,36 +470,25 @@ Lock duration can be configured in the instance's restrictions settings.
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors29;
 import com.clerk.backend_api.models.operations.LockUserResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors29, Exception {
 
-            LockUserResponse res = sdk.users().lock()
-                .userId("<value>")
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        LockUserResponse res = sdk.users().lock()
+                .userId("<id>")
                 .call();
 
-            if (res.user().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.user().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -612,11 +505,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 403                       | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
-
+| Error Type                  | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors29 | 403                         | application/json            |
+| models/errors/SDKError      | 4XX, 5XX                    | \*/\*                       |
 
 ## unlock
 
@@ -628,36 +520,25 @@ Removes the lock from the given user.
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors29;
 import com.clerk.backend_api.models.operations.UnlockUserResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors29, Exception {
 
-            UnlockUserResponse res = sdk.users().unlock()
-                .userId("<value>")
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        UnlockUserResponse res = sdk.users().unlock()
+                .userId("<id>")
                 .call();
 
-            if (res.user().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.user().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -674,11 +555,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 403                       | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
-
+| Error Type                  | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors29 | 403                         | application/json            |
+| models/errors/SDKError      | 4XX, 5XX                    | \*/\*                       |
 
 ## setProfileImage
 
@@ -690,39 +570,28 @@ Update a user's profile image
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors29;
 import com.clerk.backend_api.models.operations.SetUserProfileImageRequestBody;
 import com.clerk.backend_api.models.operations.SetUserProfileImageResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors29, Exception {
 
-            SetUserProfileImageResponse res = sdk.users().setProfileImage()
-                .userId("<value>")
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        SetUserProfileImageResponse res = sdk.users().setProfileImage()
+                .userId("<id>")
                 .requestBody(SetUserProfileImageRequestBody.builder()
                     .build())
                 .call();
 
-            if (res.user().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.user().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -740,11 +609,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 400,401,404               | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
-
+| Error Type                  | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors29 | 400, 401, 404               | application/json            |
+| models/errors/SDKError      | 4XX, 5XX                    | \*/\*                       |
 
 ## deleteProfileImage
 
@@ -756,36 +624,25 @@ Delete a user's profile image
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors30;
 import com.clerk.backend_api.models.operations.DeleteUserProfileImageResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors30, Exception {
 
-            DeleteUserProfileImageResponse res = sdk.users().deleteProfileImage()
-                .userId("<value>")
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        DeleteUserProfileImageResponse res = sdk.users().deleteProfileImage()
+                .userId("<id>")
                 .call();
 
-            if (res.user().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.user().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -802,11 +659,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 404                       | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
-
+| Error Type                  | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors30 | 404                         | application/json            |
+| models/errors/SDKError      | 4XX, 5XX                    | \*/\*                       |
 
 ## updateMetadata
 
@@ -825,39 +681,28 @@ You can remove metadata keys at any level by setting their value to `null`.
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors31;
 import com.clerk.backend_api.models.operations.UpdateUserMetadataRequestBody;
 import com.clerk.backend_api.models.operations.UpdateUserMetadataResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors31, Exception {
 
-            UpdateUserMetadataResponse res = sdk.users().updateMetadata()
-                .userId("<value>")
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        UpdateUserMetadataResponse res = sdk.users().updateMetadata()
+                .userId("<id>")
                 .requestBody(UpdateUserMetadataRequestBody.builder()
                     .build())
                 .call();
 
-            if (res.user().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.user().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -875,11 +720,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 400,401,404,422           | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
-
+| Error Type                  | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors31 | 400, 401, 404, 422          | application/json            |
+| models/errors/SDKError      | 4XX, 5XX                    | \*/\*                       |
 
 ## getOAuthAccessToken
 
@@ -892,37 +736,26 @@ For OAuth 2.0, if the access token has expired and we have a corresponding refre
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors32;
 import com.clerk.backend_api.models.operations.GetOAuthAccessTokenResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors32, Exception {
 
-            GetOAuthAccessTokenResponse res = sdk.users().getOAuthAccessToken()
-                .userId("<value>")
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        GetOAuthAccessTokenResponse res = sdk.users().getOAuthAccessToken()
+                .userId("<id>")
                 .provider("<value>")
                 .call();
 
-            if (res.responseBodies().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.responseBodies().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -940,11 +773,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 422                       | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
-
+| Error Type                  | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors32 | 422                         | application/json            |
+| models/errors/SDKError      | 4XX, 5XX                    | \*/\*                       |
 
 ## getOrganizationMemberships
 
@@ -956,32 +788,25 @@ Retrieve a paginated list of the user's organization memberships
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
+import com.clerk.backend_api.models.errors.ClerkErrors33;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors33, Exception {
 
-            sdk.users().getOrganizationMemberships()
-                .userId("<value>")
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        sdk.users().getOrganizationMemberships()
+                .userId("<id>")
                 .limit(10L)
                 .offset(0L)
                 .callAsStreamUnwrapped()
-                .forEach(item -> {
-                   // handle item
-                });
-
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
-        }
+            .forEach(item -> {
+               // handle item
+            });
 
     }
 }
@@ -1001,11 +826,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 403                       | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
-
+| Error Type                  | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors33 | 403                         | application/json            |
+| models/errors/SDKError      | 4XX, 5XX                    | \*/\*                       |
 
 ## verifyPassword
 
@@ -1018,40 +842,29 @@ Useful for custom auth flows and re-verification.
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors33;
 import com.clerk.backend_api.models.operations.VerifyPasswordRequestBody;
 import com.clerk.backend_api.models.operations.VerifyPasswordResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors33, Exception {
 
-            VerifyPasswordResponse res = sdk.users().verifyPassword()
-                .userId("<value>")
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        VerifyPasswordResponse res = sdk.users().verifyPassword()
+                .userId("<id>")
                 .requestBody(VerifyPasswordRequestBody.builder()
-                    .password("<value>")
+                    .password("1fwgbLjqCRGKsWc")
                     .build())
                 .call();
 
-            if (res.object().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.object().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -1069,11 +882,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 500                       | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
-
+| Error Type                  | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors33 | 500                         | application/json            |
+| models/errors/SDKError      | 4XX, 5XX                    | \*/\*                       |
 
 ## verifyTOTP
 
@@ -1088,40 +900,29 @@ Useful for custom auth flows and re-verification.
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors33;
 import com.clerk.backend_api.models.operations.VerifyTOTPRequestBody;
 import com.clerk.backend_api.models.operations.VerifyTOTPResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors33, Exception {
 
-            VerifyTOTPResponse res = sdk.users().verifyTOTP()
-                .userId("<value>")
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        VerifyTOTPResponse res = sdk.users().verifyTOTP()
+                .userId("<id>")
                 .requestBody(VerifyTOTPRequestBody.builder()
                     .code("<value>")
                     .build())
                 .call();
 
-            if (res.object().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.object().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -1139,11 +940,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 500                       | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
-
+| Error Type                  | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors33 | 500                         | application/json            |
+| models/errors/SDKError      | 4XX, 5XX                    | \*/\*                       |
 
 ## disableMFA
 
@@ -1155,36 +955,25 @@ Disable all of a user's MFA methods (e.g. OTP sent via SMS, TOTP on their authen
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors33;
 import com.clerk.backend_api.models.operations.DisableMFAResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors33, Exception {
 
-            DisableMFAResponse res = sdk.users().disableMFA()
-                .userId("<value>")
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        DisableMFAResponse res = sdk.users().disableMFA()
+                .userId("<id>")
                 .call();
 
-            if (res.object().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.object().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -1201,7 +990,7 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 404,500                   | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
+| Error Type                  | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors33 | 404, 500                    | application/json            |
+| models/errors/SDKError      | 4XX, 5XX                    | \*/\*                       |

@@ -5,7 +5,8 @@
 package com.clerk.backend_api;
 
 import com.clerk.backend_api.models.components.SvixURL;
-import com.clerk.backend_api.models.errors.ClerkErrors;
+import com.clerk.backend_api.models.errors.ClerkErrors52;
+import com.clerk.backend_api.models.errors.ClerkErrors53;
 import com.clerk.backend_api.models.errors.SDKError;
 import com.clerk.backend_api.models.operations.CreateSvixAppRequestBuilder;
 import com.clerk.backend_api.models.operations.CreateSvixAppResponse;
@@ -65,7 +66,7 @@ public class Webhooks implements
         HTTPRequest _req = new HTTPRequest(_url, "POST");
         _req.addHeader("Accept", "application/json")
             .addHeader("user-agent", 
-                this.sdkConfiguration.userAgent);
+                SDKConfiguration.USER_AGENT);
 
         Utils.configureSecurity(_req,  
                 this.sdkConfiguration.securitySource.getSecurity());
@@ -140,9 +141,9 @@ public class Webhooks implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "400")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors52 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors52>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -193,7 +194,7 @@ public class Webhooks implements
         HTTPRequest _req = new HTTPRequest(_url, "DELETE");
         _req.addHeader("Accept", "application/json")
             .addHeader("user-agent", 
-                this.sdkConfiguration.userAgent);
+                SDKConfiguration.USER_AGENT);
 
         Utils.configureSecurity(_req,  
                 this.sdkConfiguration.securitySource.getSecurity());
@@ -257,9 +258,9 @@ public class Webhooks implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "400")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors53 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors53>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -310,7 +311,7 @@ public class Webhooks implements
         HTTPRequest _req = new HTTPRequest(_url, "POST");
         _req.addHeader("Accept", "application/json")
             .addHeader("user-agent", 
-                this.sdkConfiguration.userAgent);
+                SDKConfiguration.USER_AGENT);
 
         Utils.configureSecurity(_req,  
                 this.sdkConfiguration.securitySource.getSecurity());
@@ -385,9 +386,9 @@ public class Webhooks implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "400")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors53 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors53>() {});
                 throw _out;
             } else {
                 throw new SDKError(
