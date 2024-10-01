@@ -21,32 +21,23 @@ The response will contain the primary domain for the instance and any satellite 
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
 import com.clerk.backend_api.models.operations.ListDomainsResponse;
 import java.lang.Exception;
 
 public class Application {
 
     public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
 
-            ListDomainsResponse res = sdk.domains().list()
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        ListDomainsResponse res = sdk.domains().list()
                 .call();
 
-            if (res.domains().isPresent()) {
-                // handle response
-            }
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.domains().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -57,10 +48,9 @@ public class Application {
 
 ### Errors
 
-| Error Object           | Status Code            | Content Type           |
+| Error Type             | Status Code            | Content Type           |
 | ---------------------- | ---------------------- | ---------------------- |
-| models/errors/SDKError | 4xx-5xx                | \*\/*                  |
-
+| models/errors/SDKError | 4XX, 5XX               | \*/\*                  |
 
 ## add
 
@@ -76,42 +66,31 @@ If you're planning to configure the new satellite domain to run behind a proxy, 
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors46;
 import com.clerk.backend_api.models.operations.AddDomainRequestBody;
 import com.clerk.backend_api.models.operations.AddDomainResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors46, Exception {
 
-            AddDomainRequestBody req = AddDomainRequestBody.builder()
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        AddDomainRequestBody req = AddDomainRequestBody.builder()
                 .name("<value>")
                 .isSatellite(false)
                 .build();
 
-            AddDomainResponse res = sdk.domains().add()
+        AddDomainResponse res = sdk.domains().add()
                 .request(req)
                 .call();
 
-            if (res.domain().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.domain().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -128,11 +107,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 400,402,422               | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
-
+| Error Type                  | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors46 | 400, 402, 422               | application/json            |
+| models/errors/SDKError      | 4XX, 5XX                    | \*/\*                       |
 
 ## delete
 
@@ -145,36 +123,25 @@ It is currently not possible to delete the instance's primary domain.
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors47;
 import com.clerk.backend_api.models.operations.DeleteDomainResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors47, Exception {
 
-            DeleteDomainResponse res = sdk.domains().delete()
-                .domainId("<value>")
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        DeleteDomainResponse res = sdk.domains().delete()
+                .domainId("<id>")
                 .call();
 
-            if (res.deletedObject().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.deletedObject().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -191,11 +158,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 403,404                   | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
-
+| Error Type                  | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors47 | 403, 404                    | application/json            |
+| models/errors/SDKError      | 4XX, 5XX                    | \*/\*                       |
 
 ## update
 
@@ -214,39 +180,28 @@ update the instance's home origin, affecting the default application paths.
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors48;
 import com.clerk.backend_api.models.operations.UpdateDomainRequestBody;
 import com.clerk.backend_api.models.operations.UpdateDomainResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors48, Exception {
 
-            UpdateDomainResponse res = sdk.domains().update()
-                .domainId("<value>")
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        UpdateDomainResponse res = sdk.domains().update()
+                .domainId("<id>")
                 .requestBody(UpdateDomainRequestBody.builder()
                     .build())
                 .call();
 
-            if (res.domain().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.domain().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -264,7 +219,7 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 400,404,422               | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
+| Error Type                  | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors48 | 400, 404, 422               | application/json            |
+| models/errors/SDKError      | 4XX, 5XX                    | \*/\*                       |
