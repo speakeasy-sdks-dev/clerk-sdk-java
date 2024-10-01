@@ -20,32 +20,23 @@ Lists all whitelisted redirect_urls for the instance
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
 import com.clerk.backend_api.models.operations.ListRedirectURLsResponse;
 import java.lang.Exception;
 
 public class Application {
 
     public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
 
-            ListRedirectURLsResponse res = sdk.redirectURLs().list()
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        ListRedirectURLsResponse res = sdk.redirectURLs().list()
                 .call();
 
-            if (res.redirectURLList().isPresent()) {
-                // handle response
-            }
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.redirectURLList().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -56,10 +47,9 @@ public class Application {
 
 ### Errors
 
-| Error Object           | Status Code            | Content Type           |
+| Error Type             | Status Code            | Content Type           |
 | ---------------------- | ---------------------- | ---------------------- |
-| models/errors/SDKError | 4xx-5xx                | \*\/*                  |
-
+| models/errors/SDKError | 4XX, 5XX               | \*/\*                  |
 
 ## create
 
@@ -71,40 +61,29 @@ Create a redirect URL
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors75;
 import com.clerk.backend_api.models.operations.CreateRedirectURLRequestBody;
 import com.clerk.backend_api.models.operations.CreateRedirectURLResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
+    public static void main(String[] args) throws ClerkErrors75, Exception {
+
+        Clerk sdk = Clerk.builder()
                 .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        CreateRedirectURLRequestBody req = CreateRedirectURLRequestBody.builder()
                 .build();
 
-            CreateRedirectURLRequestBody req = CreateRedirectURLRequestBody.builder()
-                .build();
-
-            CreateRedirectURLResponse res = sdk.redirectURLs().create()
+        CreateRedirectURLResponse res = sdk.redirectURLs().create()
                 .request(req)
                 .call();
 
-            if (res.redirectURL().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.redirectURL().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -121,11 +100,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 400,422                   | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
-
+| Error Type                  | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors75 | 400, 422                    | application/json            |
+| models/errors/SDKError      | 4XX, 5XX                    | \*/\*                       |
 
 ## get
 
@@ -137,36 +115,25 @@ Retrieve the details of the redirect URL with the given ID
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors76;
 import com.clerk.backend_api.models.operations.GetRedirectURLResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors76, Exception {
 
-            GetRedirectURLResponse res = sdk.redirectURLs().get()
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        GetRedirectURLResponse res = sdk.redirectURLs().get()
                 .id("<id>")
                 .call();
 
-            if (res.redirectURL().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.redirectURL().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -183,11 +150,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 404                       | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
-
+| Error Type                  | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors76 | 404                         | application/json            |
+| models/errors/SDKError      | 4XX, 5XX                    | \*/\*                       |
 
 ## delete
 
@@ -199,36 +165,25 @@ Remove the selected redirect URL from the whitelist of the instance
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors77;
 import com.clerk.backend_api.models.operations.DeleteRedirectURLResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors77, Exception {
 
-            DeleteRedirectURLResponse res = sdk.redirectURLs().delete()
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        DeleteRedirectURLResponse res = sdk.redirectURLs().delete()
                 .id("<id>")
                 .call();
 
-            if (res.deletedObject().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.deletedObject().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -245,7 +200,7 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 404                       | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
+| Error Type                  | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors77 | 404                         | application/json            |
+| models/errors/SDKError      | 4XX, 5XX                    | \*/\*                       |

@@ -5,7 +5,12 @@
 package com.clerk.backend_api;
 
 import com.clerk.backend_api.models.components.Template;
-import com.clerk.backend_api.models.errors.ClerkErrors;
+import com.clerk.backend_api.models.errors.ClerkErrors16;
+import com.clerk.backend_api.models.errors.ClerkErrors17;
+import com.clerk.backend_api.models.errors.ClerkErrors18;
+import com.clerk.backend_api.models.errors.ClerkErrors19;
+import com.clerk.backend_api.models.errors.ClerkErrors20;
+import com.clerk.backend_api.models.errors.ClerkErrors21;
 import com.clerk.backend_api.models.errors.SDKError;
 import com.clerk.backend_api.models.operations.GetTemplateListRequest;
 import com.clerk.backend_api.models.operations.GetTemplateListRequestBuilder;
@@ -104,7 +109,7 @@ public class Templates implements
         HTTPRequest _req = new HTTPRequest(_url, "GET");
         _req.addHeader("Accept", "application/json")
             .addHeader("user-agent", 
-                this.sdkConfiguration.userAgent);
+                SDKConfiguration.USER_AGENT);
 
         Utils.configureSecurity(_req,  
                 this.sdkConfiguration.securitySource.getSecurity());
@@ -179,9 +184,9 @@ public class Templates implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "400", "401", "422")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors16 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors16>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -245,7 +250,7 @@ public class Templates implements
         HTTPRequest _req = new HTTPRequest(_url, "GET");
         _req.addHeader("Accept", "application/json")
             .addHeader("user-agent", 
-                this.sdkConfiguration.userAgent);
+                SDKConfiguration.USER_AGENT);
 
         Utils.configureSecurity(_req,  
                 this.sdkConfiguration.securitySource.getSecurity());
@@ -320,9 +325,9 @@ public class Templates implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "400", "401", "404")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors17 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors17>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -413,7 +418,7 @@ public class Templates implements
         _req.setBody(Optional.ofNullable(_serializedRequestBody));
         _req.addHeader("Accept", "application/json")
             .addHeader("user-agent", 
-                this.sdkConfiguration.userAgent);
+                SDKConfiguration.USER_AGENT);
 
         Utils.configureSecurity(_req,  
                 this.sdkConfiguration.securitySource.getSecurity());
@@ -488,9 +493,9 @@ public class Templates implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "400", "401", "402", "403", "404", "422")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors18 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors18>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -554,7 +559,7 @@ public class Templates implements
         HTTPRequest _req = new HTTPRequest(_url, "POST");
         _req.addHeader("Accept", "application/json")
             .addHeader("user-agent", 
-                this.sdkConfiguration.userAgent);
+                SDKConfiguration.USER_AGENT);
 
         Utils.configureSecurity(_req,  
                 this.sdkConfiguration.securitySource.getSecurity());
@@ -629,9 +634,9 @@ public class Templates implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "400", "401", "402", "404")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors19 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors19>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -722,7 +727,7 @@ public class Templates implements
         _req.setBody(Optional.ofNullable(_serializedRequestBody));
         _req.addHeader("Accept", "application/json")
             .addHeader("user-agent", 
-                this.sdkConfiguration.userAgent);
+                SDKConfiguration.USER_AGENT);
 
         Utils.configureSecurity(_req,  
                 this.sdkConfiguration.securitySource.getSecurity());
@@ -797,9 +802,9 @@ public class Templates implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "400", "401", "404", "422")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors20 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors20>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -896,7 +901,7 @@ public class Templates implements
         _req.setBody(Optional.ofNullable(_serializedRequestBody));
         _req.addHeader("Accept", "application/json")
             .addHeader("user-agent", 
-                this.sdkConfiguration.userAgent);
+                SDKConfiguration.USER_AGENT);
 
         Utils.configureSecurity(_req,  
                 this.sdkConfiguration.securitySource.getSecurity());
@@ -971,9 +976,9 @@ public class Templates implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "400", "401", "404")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors21 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors21>() {});
                 throw _out;
             } else {
                 throw new SDKError(

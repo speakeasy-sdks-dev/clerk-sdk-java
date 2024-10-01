@@ -6,7 +6,8 @@ package com.clerk.backend_api;
 
 import com.clerk.backend_api.models.components.Invitation;
 import com.clerk.backend_api.models.components.InvitationRevoked;
-import com.clerk.backend_api.models.errors.ClerkErrors;
+import com.clerk.backend_api.models.errors.ClerkErrors34;
+import com.clerk.backend_api.models.errors.ClerkErrors35;
 import com.clerk.backend_api.models.errors.SDKError;
 import com.clerk.backend_api.models.operations.CreateInvitationRequestBody;
 import com.clerk.backend_api.models.operations.CreateInvitationRequestBuilder;
@@ -106,7 +107,7 @@ public class Invitations implements
         _req.setBody(Optional.ofNullable(_serializedRequestBody));
         _req.addHeader("Accept", "application/json")
             .addHeader("user-agent", 
-                this.sdkConfiguration.userAgent);
+                SDKConfiguration.USER_AGENT);
 
         Utils.configureSecurity(_req,  
                 this.sdkConfiguration.securitySource.getSecurity());
@@ -181,9 +182,9 @@ public class Invitations implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "400", "422")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors34 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors34>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -261,7 +262,7 @@ public class Invitations implements
         HTTPRequest _req = new HTTPRequest(_url, "GET");
         _req.addHeader("Accept", "application/json")
             .addHeader("user-agent", 
-                this.sdkConfiguration.userAgent);
+                SDKConfiguration.USER_AGENT);
 
         _req.addQueryParams(Utils.getQueryParams(
                 ListInvitationsRequest.class,
@@ -424,7 +425,7 @@ public class Invitations implements
         HTTPRequest _req = new HTTPRequest(_url, "POST");
         _req.addHeader("Accept", "application/json")
             .addHeader("user-agent", 
-                this.sdkConfiguration.userAgent);
+                SDKConfiguration.USER_AGENT);
 
         Utils.configureSecurity(_req,  
                 this.sdkConfiguration.securitySource.getSecurity());
@@ -499,9 +500,9 @@ public class Invitations implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "400", "404")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors35 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors35>() {});
                 throw _out;
             } else {
                 throw new SDKError(

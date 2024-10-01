@@ -5,6 +5,8 @@
 package com.clerk.backend_api;
 
 import com.clerk.backend_api.models.components.Client;
+import com.clerk.backend_api.models.errors.ClerkErrors1;
+import com.clerk.backend_api.models.errors.ClerkErrors2;
 import com.clerk.backend_api.models.errors.ClerkErrors;
 import com.clerk.backend_api.models.errors.SDKError;
 import com.clerk.backend_api.models.operations.GetClientListRequest;
@@ -113,7 +115,7 @@ public class Clients implements
         HTTPRequest _req = new HTTPRequest(_url, "GET");
         _req.addHeader("Accept", "application/json")
             .addHeader("user-agent", 
-                this.sdkConfiguration.userAgent);
+                SDKConfiguration.USER_AGENT);
 
         _req.addQueryParams(Utils.getQueryParams(
                 GetClientListRequest.class,
@@ -295,7 +297,7 @@ public class Clients implements
         _req.setBody(Optional.ofNullable(_serializedRequestBody));
         _req.addHeader("Accept", "application/json")
             .addHeader("user-agent", 
-                this.sdkConfiguration.userAgent);
+                SDKConfiguration.USER_AGENT);
 
         Utils.configureSecurity(_req,  
                 this.sdkConfiguration.securitySource.getSecurity());
@@ -370,9 +372,9 @@ public class Clients implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "400", "401", "404")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors1 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors1>() {});
                 throw _out;
             } else {
                 throw new SDKError(
@@ -433,7 +435,7 @@ public class Clients implements
         HTTPRequest _req = new HTTPRequest(_url, "GET");
         _req.addHeader("Accept", "application/json")
             .addHeader("user-agent", 
-                this.sdkConfiguration.userAgent);
+                SDKConfiguration.USER_AGENT);
 
         Utils.configureSecurity(_req,  
                 this.sdkConfiguration.securitySource.getSecurity());
@@ -508,9 +510,9 @@ public class Clients implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "400", "401", "404")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors2 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors2>() {});
                 throw _out;
             } else {
                 throw new SDKError(
