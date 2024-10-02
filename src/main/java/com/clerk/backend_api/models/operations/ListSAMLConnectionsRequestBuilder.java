@@ -34,7 +34,7 @@ public class ListSAMLConnectionsRequestBuilder {
         return this;
     }
 
-    public ListSAMLConnectionsRequestBuilder limit(java.util.Optional<java.lang.Long> limit) {
+    public ListSAMLConnectionsRequestBuilder limit(Optional<Long> limit) {
         Utils.checkNotNull(limit, "limit");
         this.limit = limit;
         return this;
@@ -46,7 +46,7 @@ public class ListSAMLConnectionsRequestBuilder {
         return this;
     }
 
-    public ListSAMLConnectionsRequestBuilder offset(java.util.Optional<java.lang.Long> offset) {
+    public ListSAMLConnectionsRequestBuilder offset(Optional<Long> offset) {
         Utils.checkNotNull(offset, "offset");
         this.offset = offset;
         return this;
