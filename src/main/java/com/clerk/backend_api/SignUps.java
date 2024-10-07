@@ -5,7 +5,7 @@
 package com.clerk.backend_api;
 
 import com.clerk.backend_api.models.components.SignUp;
-import com.clerk.backend_api.models.errors.ClerkErrors;
+import com.clerk.backend_api.models.errors.ClerkErrors79;
 import com.clerk.backend_api.models.errors.SDKError;
 import com.clerk.backend_api.models.operations.SDKMethodInterfaces.*;
 import com.clerk.backend_api.models.operations.UpdateSignUpRequest;
@@ -99,7 +99,7 @@ public class SignUps implements
         _req.setBody(Optional.ofNullable(_serializedRequestBody));
         _req.addHeader("Accept", "application/json")
             .addHeader("user-agent", 
-                this.sdkConfiguration.userAgent);
+                SDKConfiguration.USER_AGENT);
 
         Utils.configureSecurity(_req,  
                 this.sdkConfiguration.securitySource.getSecurity());
@@ -174,9 +174,9 @@ public class SignUps implements
         }
         if (Utils.statusCodeMatches(_httpRes.statusCode(), "403")) {
             if (Utils.contentTypeMatches(_contentType, "application/json")) {
-                ClerkErrors _out = Utils.mapper().readValue(
+                ClerkErrors79 _out = Utils.mapper().readValue(
                     Utils.toUtf8AndClose(_httpRes.body()),
-                    new TypeReference<ClerkErrors>() {});
+                    new TypeReference<ClerkErrors79>() {});
                 throw _out;
             } else {
                 throw new SDKError(
