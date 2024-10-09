@@ -19,35 +19,24 @@ Get a list of all identifiers which are not allowed to access an instance
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors39;
 import com.clerk.backend_api.models.operations.ListBlocklistIdentifiersResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors39, Exception {
 
-            ListBlocklistIdentifiersResponse res = sdk.blocklist().list()
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        ListBlocklistIdentifiersResponse res = sdk.blocklist().list()
                 .call();
 
-            if (res.blocklistIdentifiers().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.blocklistIdentifiers().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -58,11 +47,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 401,402                   | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
-
+| Error Type                  | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors39 | 401, 402                    | application/json            |
+| models/errors/SDKError      | 4XX, 5XX                    | \*/\*                       |
 
 ## create
 
@@ -74,41 +62,30 @@ Create an identifier that is blocked from accessing an instance
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors40;
 import com.clerk.backend_api.models.operations.CreateBlocklistIdentifierRequestBody;
 import com.clerk.backend_api.models.operations.CreateBlocklistIdentifierResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors40, Exception {
 
-            CreateBlocklistIdentifierRequestBody req = CreateBlocklistIdentifierRequestBody.builder()
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        CreateBlocklistIdentifierRequestBody req = CreateBlocklistIdentifierRequestBody.builder()
                 .identifier("<value>")
                 .build();
 
-            CreateBlocklistIdentifierResponse res = sdk.blocklist().create()
+        CreateBlocklistIdentifierResponse res = sdk.blocklist().create()
                 .request(req)
                 .call();
 
-            if (res.blocklistIdentifier().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.blocklistIdentifier().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -125,11 +102,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 400,402,422               | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
-
+| Error Type                  | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors40 | 400, 402, 422               | application/json            |
+| models/errors/SDKError      | 4XX, 5XX                    | \*/\*                       |
 
 ## delete
 
@@ -141,36 +117,25 @@ Delete an identifier from the instance block-list
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors41;
 import com.clerk.backend_api.models.operations.DeleteBlocklistIdentifierResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
-                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
-                .build();
+    public static void main(String[] args) throws ClerkErrors41, Exception {
 
-            DeleteBlocklistIdentifierResponse res = sdk.blocklist().delete()
-                .identifierId("<value>")
+        Clerk sdk = Clerk.builder()
+                .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        DeleteBlocklistIdentifierResponse res = sdk.blocklist().delete()
+                .identifierId("<id>")
                 .call();
 
-            if (res.deletedObject().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.deletedObject().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -187,7 +152,7 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 402,404                   | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
+| Error Type                  | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors41 | 402, 404                    | application/json            |
+| models/errors/SDKError      | 4XX, 5XX                    | \*/\*                       |
