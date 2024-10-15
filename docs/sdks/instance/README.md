@@ -22,40 +22,29 @@ Updates the settings of an instance
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors42;
 import com.clerk.backend_api.models.operations.UpdateInstanceAuthConfigRequestBody;
 import com.clerk.backend_api.models.operations.UpdateInstanceAuthConfigResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
+    public static void main(String[] args) throws ClerkErrors42, Exception {
+
+        Clerk sdk = Clerk.builder()
                 .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        UpdateInstanceAuthConfigRequestBody req = UpdateInstanceAuthConfigRequestBody.builder()
                 .build();
 
-            UpdateInstanceAuthConfigRequestBody req = UpdateInstanceAuthConfigRequestBody.builder()
-                .build();
-
-            UpdateInstanceAuthConfigResponse res = sdk.instance().updateAuthConfig()
+        UpdateInstanceAuthConfigResponse res = sdk.instance().updateAuthConfig()
                 .request(req)
                 .call();
 
-            if (res.instanceSettings().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.instanceSettings().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -72,11 +61,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 402,422                   | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
-
+| Error Type                  | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors42 | 402, 422                    | application/json            |
+| models/errors/SDKError      | 4XX, 5XX                    | \*/\*                       |
 
 ## ~~updateProductionDomain~~
 
@@ -94,38 +82,27 @@ WARNING: Changing your domain will invalidate all current user sessions (i.e. us
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors43;
 import com.clerk.backend_api.models.operations.UpdateProductionInstanceDomainRequestBody;
 import com.clerk.backend_api.models.operations.UpdateProductionInstanceDomainResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
+    public static void main(String[] args) throws ClerkErrors43, Exception {
+
+        Clerk sdk = Clerk.builder()
                 .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        UpdateProductionInstanceDomainRequestBody req = UpdateProductionInstanceDomainRequestBody.builder()
                 .build();
 
-            UpdateProductionInstanceDomainRequestBody req = UpdateProductionInstanceDomainRequestBody.builder()
-                .build();
-
-            UpdateProductionInstanceDomainResponse res = sdk.instance().updateProductionDomain()
+        UpdateProductionInstanceDomainResponse res = sdk.instance().updateProductionDomain()
                 .request(req)
                 .call();
 
-            // handle response
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
-        }
-
+        // handle response
     }
 }
 ```
@@ -142,11 +119,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 400,422                   | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
-
+| Error Type                  | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors43 | 400, 422                    | application/json            |
+| models/errors/SDKError      | 4XX, 5XX                    | \*/\*                       |
 
 ## update
 
@@ -158,38 +134,27 @@ Updates the settings of an instance
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors49;
 import com.clerk.backend_api.models.operations.UpdateInstanceRequestBody;
 import com.clerk.backend_api.models.operations.UpdateInstanceResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
+    public static void main(String[] args) throws ClerkErrors49, Exception {
+
+        Clerk sdk = Clerk.builder()
                 .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        UpdateInstanceRequestBody req = UpdateInstanceRequestBody.builder()
                 .build();
 
-            UpdateInstanceRequestBody req = UpdateInstanceRequestBody.builder()
-                .build();
-
-            UpdateInstanceResponse res = sdk.instance().update()
+        UpdateInstanceResponse res = sdk.instance().update()
                 .request(req)
                 .call();
 
-            // handle response
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
-        }
-
+        // handle response
     }
 }
 ```
@@ -206,11 +171,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 422                       | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
-
+| Error Type                  | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors49 | 422                         | application/json            |
+| models/errors/SDKError      | 4XX, 5XX                    | \*/\*                       |
 
 ## updateRestrictions
 
@@ -222,40 +186,29 @@ Updates the restriction settings of an instance
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors49;
 import com.clerk.backend_api.models.operations.UpdateInstanceRestrictionsRequestBody;
 import com.clerk.backend_api.models.operations.UpdateInstanceRestrictionsResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
+    public static void main(String[] args) throws ClerkErrors49, Exception {
+
+        Clerk sdk = Clerk.builder()
                 .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        UpdateInstanceRestrictionsRequestBody req = UpdateInstanceRestrictionsRequestBody.builder()
                 .build();
 
-            UpdateInstanceRestrictionsRequestBody req = UpdateInstanceRestrictionsRequestBody.builder()
-                .build();
-
-            UpdateInstanceRestrictionsResponse res = sdk.instance().updateRestrictions()
+        UpdateInstanceRestrictionsResponse res = sdk.instance().updateRestrictions()
                 .request(req)
                 .call();
 
-            if (res.instanceRestrictions().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.instanceRestrictions().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -272,11 +225,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 402,422                   | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
-
+| Error Type                  | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors49 | 402, 422                    | application/json            |
+| models/errors/SDKError      | 4XX, 5XX                    | \*/\*                       |
 
 ## changeProductionDomain
 
@@ -292,38 +244,27 @@ WARNING: Changing your domain will invalidate all current user sessions (i.e. us
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors50;
 import com.clerk.backend_api.models.operations.ChangeProductionInstanceDomainRequestBody;
 import com.clerk.backend_api.models.operations.ChangeProductionInstanceDomainResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
+    public static void main(String[] args) throws ClerkErrors50, Exception {
+
+        Clerk sdk = Clerk.builder()
                 .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        ChangeProductionInstanceDomainRequestBody req = ChangeProductionInstanceDomainRequestBody.builder()
                 .build();
 
-            ChangeProductionInstanceDomainRequestBody req = ChangeProductionInstanceDomainRequestBody.builder()
-                .build();
-
-            ChangeProductionInstanceDomainResponse res = sdk.instance().changeProductionDomain()
+        ChangeProductionInstanceDomainResponse res = sdk.instance().changeProductionDomain()
                 .request(req)
                 .call();
 
-            // handle response
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
-        }
-
+        // handle response
     }
 }
 ```
@@ -340,11 +281,10 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 400,422                   | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
-
+| Error Type                  | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors50 | 400, 422                    | application/json            |
+| models/errors/SDKError      | 4XX, 5XX                    | \*/\*                       |
 
 ## updateOrganizationSettings
 
@@ -356,40 +296,29 @@ Updates the organization settings of the instance
 package hello.world;
 
 import com.clerk.backend_api.Clerk;
-import com.clerk.backend_api.models.errors.SDKError;
+import com.clerk.backend_api.models.errors.ClerkErrors51;
 import com.clerk.backend_api.models.operations.UpdateInstanceOrganizationSettingsRequestBody;
 import com.clerk.backend_api.models.operations.UpdateInstanceOrganizationSettingsResponse;
 import java.lang.Exception;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
-        try {
-            Clerk sdk = Clerk.builder()
+    public static void main(String[] args) throws ClerkErrors51, Exception {
+
+        Clerk sdk = Clerk.builder()
                 .bearerAuth("<YOUR_BEARER_TOKEN_HERE>")
+            .build();
+
+        UpdateInstanceOrganizationSettingsRequestBody req = UpdateInstanceOrganizationSettingsRequestBody.builder()
                 .build();
 
-            UpdateInstanceOrganizationSettingsRequestBody req = UpdateInstanceOrganizationSettingsRequestBody.builder()
-                .build();
-
-            UpdateInstanceOrganizationSettingsResponse res = sdk.instance().updateOrganizationSettings()
+        UpdateInstanceOrganizationSettingsResponse res = sdk.instance().updateOrganizationSettings()
                 .request(req)
                 .call();
 
-            if (res.organizationSettings().isPresent()) {
-                // handle response
-            }
-        } catch (com.clerk.backend_api.models.errors.ClerkErrors e) {
-            // handle exception
-            throw e;
-        } catch (SDKError e) {
-            // handle exception
-            throw e;
-        } catch (Exception e) {
-            // handle exception
-            throw e;
+        if (res.organizationSettings().isPresent()) {
+            // handle response
         }
-
     }
 }
 ```
@@ -406,7 +335,7 @@ public class Application {
 
 ### Errors
 
-| Error Object              | Status Code               | Content Type              |
-| ------------------------- | ------------------------- | ------------------------- |
-| models/errors/ClerkErrors | 402,404,422               | application/json          |
-| models/errors/SDKError    | 4xx-5xx                   | \*\/*                     |
+| Error Type                  | Status Code                 | Content Type                |
+| --------------------------- | --------------------------- | --------------------------- |
+| models/errors/ClerkErrors51 | 402, 404, 422               | application/json            |
+| models/errors/SDKError      | 4XX, 5XX                    | \*/\*                       |

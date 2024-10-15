@@ -16,7 +16,7 @@ public class GetOrganizationRequestBuilder {
         this.sdk = sdk;
     }
 
-    public GetOrganizationRequestBuilder organizationId(java.lang.String organizationId) {
+    public GetOrganizationRequestBuilder organizationId(String organizationId) {
         Utils.checkNotNull(organizationId, "organizationId");
         this.organizationId = organizationId;
         return this;

@@ -30,7 +30,7 @@ public class ListPendingOrganizationInvitationsRequestBuilder {
         this.sdk = sdk;
     }
 
-    public ListPendingOrganizationInvitationsRequestBuilder organizationId(java.lang.String organizationId) {
+    public ListPendingOrganizationInvitationsRequestBuilder organizationId(String organizationId) {
         Utils.checkNotNull(organizationId, "organizationId");
         this.organizationId = organizationId;
         return this;
@@ -42,7 +42,7 @@ public class ListPendingOrganizationInvitationsRequestBuilder {
         return this;
     }
 
-    public ListPendingOrganizationInvitationsRequestBuilder limit(java.util.Optional<java.lang.Long> limit) {
+    public ListPendingOrganizationInvitationsRequestBuilder limit(Optional<Long> limit) {
         Utils.checkNotNull(limit, "limit");
         this.limit = limit;
         return this;
@@ -54,7 +54,7 @@ public class ListPendingOrganizationInvitationsRequestBuilder {
         return this;
     }
 
-    public ListPendingOrganizationInvitationsRequestBuilder offset(java.util.Optional<java.lang.Long> offset) {
+    public ListPendingOrganizationInvitationsRequestBuilder offset(Optional<Long> offset) {
         Utils.checkNotNull(offset, "offset");
         this.offset = offset;
         return this;
